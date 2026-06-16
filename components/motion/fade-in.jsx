@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
+import { m, useReducedMotion } from "motion/react"
 
 const FadeIn = ({
   children,
@@ -13,7 +13,7 @@ const FadeIn = ({
 }) => {
   const shouldReduce = useReducedMotion()
   const Tag = as
-  const Component = motion[as] || motion.div
+  const Component = m[as] || m.div
 
   if (shouldReduce) {
     return <Tag className={className}>{children}</Tag>

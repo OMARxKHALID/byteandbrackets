@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "motion/react"
+import { m, useScroll, useTransform } from "motion/react"
 import FadeIn from "../motion/fade-in"
 import SectionTag from "../ui/section-tag"
 import LiveProjectButton from "../ui/live-project-button"
@@ -54,7 +54,7 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
 
   return (
     <div className="h-[64vh] sm:h-[68vh]">
-      <motion.div
+      <m.div
         className="sticky w-full h-full rounded-[28px] sm:rounded-[40px] md:rounded-[56px] bg-ink text-paper p-6 sm:p-8 md:p-10 origin-top overflow-hidden grid grid-rows-[auto_1fr] md:grid-rows-1 md:grid-cols-[1.1fr_0.9fr] gap-6 md:gap-10"
         style={{ scale, top: `${5 + index * 1.5}rem` }}
       >
@@ -79,7 +79,7 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
         <div className="min-h-0">
           <SpecPanel project={project} />
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }
@@ -129,7 +129,7 @@ const ProjectsSection = () => {
           <Link
             href="/projects"
             aria-label="View all work"
-            className="group inline-flex items-center gap-3 whitespace-nowrap rounded-full border border-ink/30 text-ink font-mono uppercase tracking-wider px-8 py-4 min-h-[44px] text-xs sm:text-sm hover:bg-ink hover:text-paper hover:border-ink active:scale-95 touch-manipulation transition-[color,background-color,border-color,transform] duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+            className="group inline-flex items-center gap-3 whitespace-nowrap rounded-full border border-ink/40 text-ink font-mono uppercase tracking-wider px-8 py-4 min-h-[44px] text-xs sm:text-sm hover:bg-ink hover:text-paper hover:border-ink hover:-translate-y-0.5 active:translate-y-0 active:scale-95 touch-manipulation transition-[color,background-color,border-color,transform] duration-200 ease-out cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
           >
             View all work
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>

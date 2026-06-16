@@ -63,11 +63,6 @@ body::after {
   mix-blend-mode: multiply;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .font-display {
   font-family: var(--font-display);
 }

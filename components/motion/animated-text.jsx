@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
+import { m, useScroll, useTransform, useReducedMotion } from "motion/react"
 
 const AnimatedWord = ({ word, scrollYProgress, index, total }) => {
   const start = index / total
@@ -9,9 +9,9 @@ const AnimatedWord = ({ word, scrollYProgress, index, total }) => {
   const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1])
 
   return (
-    <motion.span className="inline-block whitespace-nowrap" style={{ opacity }}>
+    <m.span className="inline-block whitespace-nowrap" style={{ opacity }}>
       {word}
-    </motion.span>
+    </m.span>
   )
 }
 
