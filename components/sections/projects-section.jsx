@@ -70,7 +70,7 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
               [{project.number}] — {project.scope} · {project.year}
             </span>
             <div className="hidden sm:block">
-              <LiveProjectButton href={project.url} />
+              <LiveProjectButton href={`/work/${project.slug}`} />
             </div>
           </div>
 

@@ -1,0 +1,31 @@
+"use client"
+
+import { NAV_LINKS } from "../../lib/data"
+import { useScrollSpy } from "../../hooks/use-scroll-spy"
+
+const IDS = NAV_LINKS.map((link) => link.toLowerCase())
+
+const DesktopNav = () => {
+  const active = useScrollSpy(IDS)
+
+  return (
+    <div className="hidden md:flex items-center gap-8">
+      {NAV_LINKS.map((link) => {
+        const id = link.toLowerCase()
+        const isActive = active === id
+        return (
+          <a
+            key={link}
+            href={`#${id}`}
+            aria-current={isActive ? "true" : undefined}
+            className={`font-mono uppercase tracking-wide text-xs lg:text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm py-2 ${isActive ? "text-electric" : "text-ash hover:text-electric"}`}
+          >
+            {link}
+          </a>
+        )
+      })}
+    </div>
+  )
+}
+
+export default DesktopNav

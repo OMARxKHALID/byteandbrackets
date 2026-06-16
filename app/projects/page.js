@@ -57,8 +57,8 @@ const ProjectsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-paper-shade border border-paper-shade">
               {PROJECTS.map((project, i) => (
                 <FadeIn key={project.number} delay={(i % 2) * 0.08} y={30} className="bg-paper">
-                  <a
-                    href={project.url}
+                  <Link
+                    href={`/work/${project.slug}`}
                     aria-label={`${project.client} case study`}
                     className="group flex flex-col gap-5 p-6 sm:p-8 h-full hover:bg-ink hover:text-paper transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-inset"
                   >
@@ -93,7 +93,7 @@ const ProjectsPage = () => {
                         </span>
                       ))}
                     </div>
-                  </a>
+                  </Link>
                 </FadeIn>
               ))}
             </div>

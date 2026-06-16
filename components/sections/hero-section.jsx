@@ -1,7 +1,8 @@
 import FadeIn from "../motion/fade-in"
 import ContactButton from "../ui/contact-button"
 import MobileNav from "../ui/mobile-nav"
-import { NAV_LINKS, BRAND_SHORT, HERO_THESIS, AVAILABILITY } from "../../lib/data"
+import DesktopNav from "../ui/desktop-nav"
+import { BRAND_SHORT, HERO_THESIS, AVAILABILITY } from "../../lib/data"
 
 const HeroSection = () => {
   return (
@@ -16,17 +17,7 @@ const HeroSection = () => {
             {BRAND_SHORT}
             <span className="text-electric">.</span>
           </a>
-          <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="font-mono uppercase tracking-wide text-xs lg:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm py-2"
-              >
-                {link}
-              </a>
-            ))}
-          </div>
+          <DesktopNav />
           <MobileNav />
         </nav>
       </FadeIn>

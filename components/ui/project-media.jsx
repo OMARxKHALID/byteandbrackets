@@ -4,7 +4,14 @@ import { useRef, useState } from "react"
 import Image from "next/image"
 import { useReducedMotion } from "motion/react"
 
-const ProjectMedia = ({ image, video, alt, priority = false, className = "" }) => {
+const ProjectMedia = ({
+  image,
+  video,
+  alt,
+  priority = false,
+  sizes = "(max-width: 768px) 100vw, 50vw",
+  className = "",
+}) => {
   const videoRef = useRef(null)
   const shouldReduce = useReducedMotion()
   const [active, setActive] = useState(false)
@@ -35,7 +42,7 @@ const ProjectMedia = ({ image, video, alt, priority = false, className = "" }) =
         alt={alt}
         fill
         priority={priority}
-        sizes="(max-width: 768px) 100vw, 50vw"
+        sizes={sizes}
         className="object-cover"
       />
       {!shouldReduce && video && (

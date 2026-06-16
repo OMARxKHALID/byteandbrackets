@@ -10,7 +10,7 @@ const ContactSection = () => {
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-12 sm:gap-16">
         <FadeIn delay={0} y={20}>
-          <SectionTag index="06" label="start here" dark />
+          <SectionTag index="07" label="start here" dark />
         </FadeIn>
 
         <FadeIn delay={0.05} y={30}>

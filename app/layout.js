@@ -1,6 +1,7 @@
 import { Bricolage_Grotesque, Hanken_Grotesk, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import MotionProvider from "../components/motion/motion-provider"
+import ScrollProgress from "../components/motion/scroll-progress"
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -57,7 +58,10 @@ const RootLayout = ({ children }) => {
       className={`${display.variable} ${body.variable} ${mono.variable}`}
     >
       <body className={body.className}>
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          <ScrollProgress />
+          {children}
+        </MotionProvider>
       </body>
     </html>
   )
