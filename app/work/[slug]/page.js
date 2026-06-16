@@ -72,7 +72,7 @@ const CaseStudyPage = async ({ params }) => {
               <Link
                 href="/projects"
                 aria-label="Back to all work"
-                className="group inline-flex items-center gap-2 py-3 font-mono uppercase tracking-wide text-xs sm:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
+                className="group inline-flex items-center gap-2 py-3 min-h-[44px] touch-manipulation font-mono uppercase tracking-wide text-xs sm:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
               >
                 <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span>
                 All work
@@ -80,7 +80,7 @@ const CaseStudyPage = async ({ params }) => {
               <Link
                 href="/"
                 aria-label="Byte & Brackets home"
-                className="font-display font-extrabold text-lg sm:text-xl tracking-tight"
+                className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
               >
                 {BRAND_SHORT}
                 <span className="text-electric">.</span>
@@ -164,7 +164,7 @@ const CaseStudyPage = async ({ params }) => {
             <Link
               href={`/work/${next.slug}`}
               aria-label={`Next case study: ${next.client}`}
-              className="group flex items-center justify-between gap-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
+              className="group flex items-center justify-between gap-6 py-2 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
             >
               <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
                 Next case study

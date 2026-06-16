@@ -12,7 +12,7 @@ const HeroSection = () => {
           <a
             href="#main-content"
             aria-label="Byte & Brackets home"
-            className="font-display font-extrabold text-lg sm:text-xl tracking-tight"
+            className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
           >
             {BRAND_SHORT}
             <span className="text-electric">.</span>

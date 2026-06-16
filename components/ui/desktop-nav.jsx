@@ -18,7 +18,7 @@ const DesktopNav = () => {
             key={link}
             href={`#${id}`}
             aria-current={isActive ? "true" : undefined}
-            className={`font-mono uppercase tracking-wide text-xs lg:text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm py-2 ${isActive ? "text-electric" : "text-ash hover:text-electric"}`}
+            className={`font-mono uppercase tracking-wide text-xs lg:text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm inline-flex items-center min-h-[44px] touch-manipulation ${isActive ? "text-electric" : "text-ash hover:text-electric"}`}
           >
             {link}
           </a>

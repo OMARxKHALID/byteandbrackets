@@ -55,7 +55,7 @@ const MobileNav = () => {
               href={`#${link.toLowerCase()}`}
               onClick={handleClose}
               tabIndex={open ? 0 : -1}
-              className="group flex items-baseline gap-4 py-2 font-display font-extrabold uppercase tracking-tight leading-none text-[clamp(2.5rem,12vw,4rem)] hover:text-electric transition-colors duration-200"
+              className="group flex items-baseline gap-4 py-2 font-display font-extrabold uppercase tracking-tight leading-none text-[clamp(2.5rem,12vw,4rem)] touch-manipulation hover:text-electric transition-colors duration-200"
             >
               <span className="font-mono text-electric text-base font-normal">
                 0{i + 1}
@@ -70,7 +70,7 @@ const MobileNav = () => {
             href={`mailto:${CONTACT_EMAIL}`}
             onClick={handleClose}
             tabIndex={open ? 0 : -1}
-            className="font-display font-bold text-xl tracking-tight hover:text-electric transition-colors duration-200"
+            className="font-display font-bold text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation hover:text-electric transition-colors duration-200"
           >
             {CONTACT_EMAIL}
           </a>
@@ -82,7 +82,7 @@ const MobileNav = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 tabIndex={open ? 0 : -1}
-                className="font-mono uppercase tracking-widest text-ash hover:text-electric text-xs transition-colors duration-200"
+                className="font-mono uppercase tracking-widest text-ash hover:text-electric text-xs inline-flex items-center min-h-[44px] touch-manipulation transition-colors duration-200"
               >
                 {s.label}
               </a>

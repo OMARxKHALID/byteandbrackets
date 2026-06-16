@@ -26,7 +26,7 @@ const ProjectsPage = () => {
               <Link
                 href="/"
                 aria-label="Back to home"
-                className="group inline-flex items-center gap-2 py-3 font-mono uppercase tracking-wide text-xs sm:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
+                className="group inline-flex items-center gap-2 py-3 min-h-[44px] touch-manipulation font-mono uppercase tracking-wide text-xs sm:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
               >
                 <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span>
                 Back
@@ -34,7 +34,7 @@ const ProjectsPage = () => {
               <Link
                 href="/"
                 aria-label="Byte & Brackets home"
-                className="font-display font-extrabold text-lg sm:text-xl tracking-tight"
+                className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
               >
                 {BRAND_SHORT}
                 <span className="text-electric">.</span>

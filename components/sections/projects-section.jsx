@@ -5,7 +5,6 @@ import Link from "next/link"
 import { m, useScroll, useTransform, useReducedMotion } from "motion/react"
 import FadeIn from "../motion/fade-in"
 import SectionTag from "../ui/section-tag"
-import LiveProjectButton from "../ui/live-project-button"
 import { PROJECTS } from "../../lib/data"
 
 const FEATURED = PROJECTS.slice(0, 5)
@@ -60,32 +59,39 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
 
   return (
     <div className={wrapperClass}>
-      <m.div
-        className={cardClass}
-        style={cardStyle}
+      <Link
+        href={`/work/${project.slug}`}
+        aria-label={`${project.client} case study`}
+        className="group block h-full rounded-[28px] sm:rounded-[40px] md:rounded-[56px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
       >
-        <div className="flex flex-col">
-          <div className="flex items-center justify-between gap-4">
-            <span className="font-mono uppercase tracking-widest text-paper/65 text-[10px] sm:text-xs">
-              [{project.number}] — {project.scope} · {project.year}
-            </span>
-            <div className="hidden sm:block">
-              <LiveProjectButton href={`/work/${project.slug}`} />
+        <m.div
+          className={cardClass}
+          style={cardStyle}
+        >
+          <div className="flex flex-col">
+            <div className="flex items-center justify-between gap-4">
+              <span className="font-mono uppercase tracking-widest text-paper/65 text-[10px] sm:text-xs">
+                [{project.number}] — {project.scope} · {project.year}
+              </span>
+              <span className="flex items-center gap-2 font-mono uppercase tracking-wider text-paper/65 group-hover:text-electric text-[10px] sm:text-xs whitespace-nowrap transition-colors duration-200">
+                Case study
+                <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200">↗</span>
+              </span>
             </div>
+
+            <h3 className="font-display font-extrabold uppercase leading-[0.85] tracking-tight mt-6 md:mt-auto text-[clamp(2.75rem,8vw,6rem)]">
+              {project.client}
+            </h3>
+            <p className="text-paper/65 font-medium leading-relaxed max-w-lg mt-5 sm:mt-6 text-[clamp(0.95rem,1.6vw,1.2rem)]">
+              {project.outcome}
+            </p>
           </div>
 
-          <h3 className="font-display font-extrabold uppercase leading-[0.85] tracking-tight mt-auto text-[clamp(2.75rem,8vw,6rem)]">
-            {project.client}
-          </h3>
-          <p className="text-paper/65 font-medium leading-relaxed max-w-lg mt-5 sm:mt-6 text-[clamp(0.95rem,1.6vw,1.2rem)]">
-            {project.outcome}
-          </p>
-        </div>
-
-        <div className="min-h-0">
-          <SpecPanel project={project} />
-        </div>
-      </m.div>
+          <div className="min-h-0">
+            <SpecPanel project={project} />
+          </div>
+        </m.div>
+      </Link>
     </div>
   )
 }

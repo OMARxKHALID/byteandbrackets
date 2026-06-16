@@ -25,7 +25,7 @@ const ContactSection = () => {
           <a
             href={`mailto:${CONTACT_EMAIL}`}
             aria-label={`Email ${CONTACT_EMAIL}`}
-            className="group inline-flex items-center gap-4 font-display font-bold tracking-tight leading-none text-[clamp(1.1rem,4vw,3rem)] hover:text-electric transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink rounded-sm"
+            className="group inline-flex items-center gap-4 font-display font-bold tracking-tight leading-none text-[clamp(1.1rem,4vw,3rem)] min-h-[44px] touch-manipulation hover:text-electric transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink rounded-sm"
           >
             {CONTACT_EMAIL}
             <span className="text-electric group-hover:translate-x-1 transition-transform duration-300 text-[clamp(0.8rem,2vw,2rem)]">
@@ -55,7 +55,7 @@ const ContactSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="font-mono uppercase tracking-widest text-paper/60 hover:text-electric text-[10px] sm:text-xs transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-paper/40 rounded-sm"
+                  className="font-mono uppercase tracking-widest text-paper/60 hover:text-electric text-[10px] sm:text-xs inline-flex items-center min-h-[44px] touch-manipulation transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-paper/40 rounded-sm"
                 >
                   {s.label}
                 </a>
