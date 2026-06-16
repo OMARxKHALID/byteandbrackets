@@ -5,7 +5,7 @@ import { NAV_LINKS, BRAND_SHORT, HERO_THESIS, AVAILABILITY } from "../../lib/dat
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col min-h-dvh lg:min-h-[760px] [overflow-x:clip]">
+    <section className="relative flex flex-col min-h-[90dvh] lg:min-h-[760px] [overflow-x:clip]">
       <FadeIn delay={0} y={-20}>
         <nav className="flex items-center justify-between px-6 sm:px-10 md:px-16 pt-6 md:pt-8">
           <a
@@ -33,31 +33,34 @@ const HeroSection = () => {
 
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
         <FadeIn delay={0.1} y={20} className="mb-6 sm:mb-8">
-          <span className="eyebrow">Product engineering studio · est. 2019</span>
+          <span className="eyebrow inline-flex items-center gap-2">
+            Product engineering studio · est. 2019
+            <span className="caret" aria-hidden="true" />
+          </span>
         </FadeIn>
 
         <div className="flex items-center justify-center gap-2 sm:gap-5 md:gap-8 w-full">
-          <FadeIn delay={0.25} x={40} y={0}>
+          <FadeIn delay={0.35} x={110} y={0}>
             <span
               aria-hidden="true"
-              className="font-display font-extrabold leading-none text-electric text-[clamp(4rem,18vw,17rem)]"
+              className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
             >
               [
             </span>
           </FadeIn>
 
           <FadeIn delay={0.15} y={30} className="text-center">
-            <h1 className="font-display font-extrabold uppercase leading-[0.82] tracking-tight text-[clamp(2.2rem,9vw,8.5rem)]">
+            <h1 className="font-display font-extrabold uppercase leading-[0.82] tracking-tight text-[clamp(3rem,10vw,8.5rem)]">
               Byte <span className="text-electric">&amp;</span>
               <br />
               Brackets
             </h1>
           </FadeIn>
 
-          <FadeIn delay={0.25} x={-40} y={0}>
+          <FadeIn delay={0.35} x={-110} y={0}>
             <span
               aria-hidden="true"
-              className="font-display font-extrabold leading-none text-electric text-[clamp(4rem,18vw,17rem)]"
+              className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
             >
               ]
             </span>

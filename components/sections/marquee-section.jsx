@@ -2,7 +2,40 @@
 
 import { useRef, useEffect, useCallback } from "react"
 import { useReducedMotion } from "motion/react"
+import {
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiRust,
+  SiPython,
+  SiGo,
+  SiGraphql,
+  SiDocker,
+  SiRedis,
+  SiStripe,
+  SiTailwindcss,
+  SiVercel,
+} from "react-icons/si"
 import { TICKER } from "../../lib/data"
+
+const ICONS = {
+  TypeScript: SiTypescript,
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  "Node.js": SiNodedotjs,
+  PostgreSQL: SiPostgresql,
+  Rust: SiRust,
+  Python: SiPython,
+  Go: SiGo,
+  GraphQL: SiGraphql,
+  Docker: SiDocker,
+  Redis: SiRedis,
+  Stripe: SiStripe,
+  Tailwind: SiTailwindcss,
+  Vercel: SiVercel,
+}
 
 const tripled = [...TICKER, ...TICKER, ...TICKER]
 
@@ -47,16 +80,27 @@ const MarqueeSection = () => {
       className="bg-ink text-paper py-8 sm:py-10 overflow-hidden"
     >
       <div ref={rowRef} className="flex items-center gap-8 sm:gap-12 whitespace-nowrap will-change-transform">
-        {tripled.map((item, i) => (
-          <span key={`${item}-${i}`} className="flex items-center gap-8 sm:gap-12 flex-shrink-0">
-            <span className="font-display font-semibold uppercase tracking-tight text-[clamp(1.5rem,4vw,3rem)]">
-              {item}
+        {tripled.map((item, i) => {
+          const Icon = ICONS[item]
+          return (
+            <span key={`${item}-${i}`} className="flex items-center gap-8 sm:gap-12 flex-shrink-0">
+              <span className="flex items-center gap-3 sm:gap-4">
+                {Icon && (
+                  <Icon
+                    aria-hidden="true"
+                    className="text-paper/80 text-[clamp(1.2rem,3vw,2.2rem)] flex-shrink-0"
+                  />
+                )}
+                <span className="font-display font-semibold uppercase tracking-tight text-[clamp(1.5rem,4vw,3rem)]">
+                  {item}
+                </span>
+              </span>
+              <span className="text-electric font-display text-[clamp(1.5rem,4vw,3rem)] leading-none">
+                /
+              </span>
             </span>
-            <span className="text-electric font-display text-[clamp(1.5rem,4vw,3rem)] leading-none">
-              /
-            </span>
-          </span>
-        ))}
+          )
+        })}
       </div>
     </section>
   )
