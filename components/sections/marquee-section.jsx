@@ -2,90 +2,61 @@
 
 import { useRef, useEffect, useCallback } from "react"
 import { useReducedMotion } from "motion/react"
-import { MARQUEE_VIDEOS_ROW1, MARQUEE_VIDEOS_ROW2 } from "../../lib/data"
+import { TICKER } from "../../lib/data"
 
-const tripled1 = [...MARQUEE_VIDEOS_ROW1, ...MARQUEE_VIDEOS_ROW1, ...MARQUEE_VIDEOS_ROW1]
-const tripled2 = [...MARQUEE_VIDEOS_ROW2, ...MARQUEE_VIDEOS_ROW2, ...MARQUEE_VIDEOS_ROW2]
-
-const videoClass =
-  "w-[280px] h-[180px] sm:w-[360px] sm:h-[232px] md:w-[420px] md:h-[270px] rounded-2xl object-cover flex-shrink-0"
+const tripled = [...TICKER, ...TICKER, ...TICKER]
 
 const MarqueeSection = () => {
   const sectionRef = useRef(null)
-  const row1Ref = useRef(null)
-  const row2Ref = useRef(null)
+  const rowRef = useRef(null)
+  const topRef = useRef(0)
+  const frameRef = useRef(0)
   const shouldReduce = useReducedMotion()
 
-  const handleScroll = useCallback(() => {
-    if (!sectionRef.current || shouldReduce) return
-    const rect = sectionRef.current.getBoundingClientRect()
-    const sectionTop = rect.top + window.scrollY
-    const value = (window.scrollY - sectionTop + window.innerHeight) * 0.3
-    if (row1Ref.current) row1Ref.current.style.transform = `translateX(${value - 200}px)`
-    if (row2Ref.current) row2Ref.current.style.transform = `translateX(${-(value - 200)}px)`
-  }, [shouldReduce])
+  const render = useCallback(() => {
+    frameRef.current = 0
+    if (!rowRef.current) return
+    const value = (window.scrollY - topRef.current + window.innerHeight) * 0.25
+    rowRef.current.style.transform = `translateX(${-(value - 200)}px)`
+  }, [])
 
   useEffect(() => {
     if (shouldReduce) return
+    const measure = () => {
+      if (sectionRef.current) topRef.current = sectionRef.current.offsetTop
+    }
+    const handleScroll = () => {
+      if (frameRef.current) return
+      frameRef.current = requestAnimationFrame(render)
+    }
+    measure()
+    render()
     window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [handleScroll, shouldReduce])
-
-  useEffect(() => {
-    const section = sectionRef.current
-    if (!section) return
-    const videos = section.querySelectorAll("video")
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        videos.forEach((v) => {
-          if (entry.isIntersecting) {
-            v.play().catch(() => {})
-          } else {
-            v.pause()
-          }
-        })
-      },
-      { threshold: 0 }
-    )
-    observer.observe(section)
-    return () => observer.disconnect()
-  }, [])
+    window.addEventListener("resize", measure)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", measure)
+      if (frameRef.current) cancelAnimationFrame(frameRef.current)
+    }
+  }, [render, shouldReduce])
 
   return (
     <section
       ref={sectionRef}
       aria-hidden="true"
-      className="bg-[#0C0C0C] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden"
+      className="bg-ink text-paper py-8 sm:py-10 overflow-hidden"
     >
-      <div className="flex flex-col gap-3">
-        <div ref={row1Ref} className="flex gap-3 will-change-transform">
-          {tripled1.map((src, i) => (
-            <video
-              key={`r1-${i}`}
-              src={src}
-              loop
-              muted
-              playsInline
-              preload="none"
-              className={videoClass}
-            />
-          ))}
-        </div>
-
-        <div ref={row2Ref} className="flex gap-3 will-change-transform">
-          {tripled2.map((src, i) => (
-            <video
-              key={`r2-${i}`}
-              src={src}
-              loop
-              muted
-              playsInline
-              preload="none"
-              className={videoClass}
-            />
-          ))}
-        </div>
+      <div ref={rowRef} className="flex items-center gap-8 sm:gap-12 whitespace-nowrap will-change-transform">
+        {tripled.map((item, i) => (
+          <span key={`${item}-${i}`} className="flex items-center gap-8 sm:gap-12 flex-shrink-0">
+            <span className="font-display font-semibold uppercase tracking-tight text-[clamp(1.5rem,4vw,3rem)]">
+              {item}
+            </span>
+            <span className="text-electric font-display text-[clamp(1.5rem,4vw,3rem)] leading-none">
+              /
+            </span>
+          </span>
+        ))}
       </div>
     </section>
   )

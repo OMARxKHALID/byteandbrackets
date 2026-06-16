@@ -1,11 +1,13 @@
+import { BRAND } from "../../lib/data"
+
 const FooterSection = () => {
   return (
-    <footer className="bg-[#0C0C0C] px-8 sm:px-12 md:px-16 py-6 flex items-center justify-between gap-4">
-      <span className="text-[#D7E2EA]/40 text-[10px] font-medium uppercase tracking-widest">
-        © {new Date().getFullYear()} Jack. All rights reserved.
+    <footer className="bg-ink text-paper px-6 sm:px-10 md:px-16 py-6 flex flex-wrap items-center justify-between gap-4">
+      <span className="font-mono uppercase tracking-widest text-paper/40 text-[10px]">
+        © {new Date().getFullYear()} {BRAND}
       </span>
-      <span className="text-[#D7E2EA]/40 text-[10px] font-medium uppercase tracking-widest">
-        3D Creator
+      <span className="font-mono uppercase tracking-widest text-paper/40 text-[10px]">
+        Software studio · Built in-house
       </span>
     </footer>
   )

@@ -1,46 +1,44 @@
-"use client"
-
 import FadeIn from "../motion/fade-in"
 import AnimatedText from "../motion/animated-text"
-import ContactButton from "../ui/contact-button"
-import { CORNER_IMAGES, ABOUT_TEXT } from "../../lib/data"
+import SectionTag from "../ui/section-tag"
+import { STUDIO_HEADLINE, STUDIO_TEXT, STATS } from "../../lib/data"
 
 const AboutSection = () => {
   return (
     <section
-      id="about"
-      className="relative z-10 flex flex-col items-center justify-center px-8 sm:px-12 md:px-16 py-32 sm:py-40 md:min-h-screen md:py-20"
+      id="studio"
+      className="relative z-10 px-6 sm:px-10 md:px-16 py-24 sm:py-32 md:py-40"
     >
-      {CORNER_IMAGES.map((img) => (
-        <FadeIn key={img.alt} {...img.fadeProps} className={img.className}>
-          <img
-            src={img.src}
-            alt={img.alt}
-            width={220}
-            height={220}
-            className="w-full pointer-events-none"
-            loading="lazy"
-          />
+      <div className="max-w-6xl mx-auto">
+        <FadeIn delay={0} y={20}>
+          <SectionTag index="04" label="studio" />
         </FadeIn>
-      ))}
 
-      <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16">
-        <FadeIn delay={0} y={40}>
-          <h2 className="hero-heading font-black uppercase leading-none tracking-tight text-center text-[clamp(3rem,12vw,160px)]">
-            About me
+        <FadeIn delay={0.05} y={30}>
+          <h2 className="font-display font-extrabold leading-[0.95] tracking-tight mt-6 sm:mt-8 max-w-4xl text-[clamp(2rem,6vw,4.5rem)]">
+            {STUDIO_HEADLINE}
           </h2>
         </FadeIn>
 
         <AnimatedText
-          text={ABOUT_TEXT}
-          className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px] text-[clamp(1rem,2vw,1.35rem)]"
+          text={STUDIO_TEXT}
+          className="text-ink/80 font-medium leading-relaxed mt-8 sm:mt-10 max-w-3xl text-[clamp(1.05rem,2vw,1.5rem)]"
         />
-      </div>
 
-      <div className="mt-16 sm:mt-20 md:mt-24">
-        <FadeIn delay={0.2} y={20}>
-          <ContactButton />
-        </FadeIn>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-paper-shade mt-16 sm:mt-20 border border-paper-shade">
+          {STATS.map((stat, i) => (
+            <FadeIn key={stat.label} delay={i * 0.08} y={20} className="bg-paper">
+              <div className="p-6 sm:p-8 flex flex-col gap-2">
+                <span className="font-display font-extrabold text-electric leading-none text-[clamp(2rem,5vw,3.5rem)]">
+                  {stat.value}
+                </span>
+                <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
+                  {stat.label}
+                </span>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   )

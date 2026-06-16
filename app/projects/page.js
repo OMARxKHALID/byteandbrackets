@@ -1,97 +1,89 @@
 import Link from "next/link"
 import FadeIn from "../../components/motion/fade-in"
 import FooterSection from "../../components/sections/footer-section"
-import { PROJECTS } from "../../lib/data"
+import { PROJECTS, BRAND_SHORT } from "../../lib/data"
 
 export const metadata = {
-  title: "Projects — Jack",
-  description: "Selected work and live projects crafted by Jack, a 3D creator.",
+  title: "Work — Byte & Brackets",
+  description: "Selected software products designed, built, and shipped by Byte & Brackets.",
 }
 
 const ProjectsPage = () => {
   return (
     <>
-      <main id="main-content" className="relative z-10 bg-[#0C0C0C] [overflow-x:clip]">
+      <main id="main-content" className="relative z-10 [overflow-x:clip]">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded focus:bg-[#D7E2EA] focus:text-[#0C0C0C] focus:font-black focus:text-sm"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded focus:bg-electric focus:text-paper focus:font-mono focus:text-sm"
         >
           Skip to main content
         </a>
 
-        <section className="px-8 sm:px-12 md:px-16 pt-6 md:pt-8">
+        <section className="px-6 sm:px-10 md:px-16 pt-6 md:pt-8">
           <FadeIn delay={0} y={-20}>
-            <nav className="flex justify-between items-center">
+            <nav className="flex items-center justify-between">
               <Link
                 href="/"
                 aria-label="Back to home"
-                className="group inline-flex items-center gap-2 py-3 cursor-pointer touch-manipulation text-[#D7E2EA] font-medium uppercase tracking-wide text-xs sm:text-sm md:text-base hover:opacity-70 transition-opacity duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7E2EA]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C0C0C] rounded-sm"
+                className="group inline-flex items-center gap-2 py-3 font-mono uppercase tracking-wide text-xs sm:text-sm text-ink/70 hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
               >
-                <span className="group-hover:-translate-x-1 transition-transform duration-200">
-                  ←
-                </span>
+                <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span>
                 Back
               </Link>
               <Link
-                href="/#contact"
-                className="py-3 cursor-pointer touch-manipulation text-[#D7E2EA] font-medium uppercase tracking-wide text-xs sm:text-sm md:text-base hover:opacity-70 transition-opacity duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7E2EA]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C0C0C] rounded-sm"
+                href="/"
+                aria-label="Byte & Brackets home"
+                className="font-display font-extrabold text-lg sm:text-xl tracking-tight"
               >
-                Contact
+                {BRAND_SHORT}
+                <span className="text-electric">.</span>
               </Link>
             </nav>
           </FadeIn>
         </section>
 
-        <section className="px-8 sm:px-12 md:px-16 pt-16 sm:pt-20 md:pt-28 pb-20 sm:pb-24 md:pb-32">
-          <div className="w-full flex flex-col items-center">
-            <FadeIn delay={0} y={40}>
-              <h1 className="hero-heading font-black uppercase text-center leading-none tracking-tight mb-4 sm:mb-6 text-[clamp(3rem,12vw,160px)]">
-                All Projects
+        <section className="px-6 sm:px-10 md:px-16 pt-16 sm:pt-20 md:pt-28 pb-20 sm:pb-24 md:pb-32">
+          <div className="max-w-6xl mx-auto">
+            <FadeIn delay={0} y={30}>
+              <span className="eyebrow">[ {PROJECTS.length} selected works ]</span>
+            </FadeIn>
+            <FadeIn delay={0.05} y={30}>
+              <h1 className="font-display font-extrabold uppercase leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(3rem,12vw,9rem)]">
+                The work
               </h1>
             </FadeIn>
-            <FadeIn delay={0.1} y={20}>
-              <p className="text-[#D7E2EA]/50 font-light uppercase tracking-widest text-[10px] sm:text-xs mb-16 sm:mb-20 md:mb-28">
-                {PROJECTS.length} Selected Works
-              </p>
-            </FadeIn>
 
-            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-paper-shade border border-paper-shade">
               {PROJECTS.map((project, i) => (
-                <FadeIn key={project.number} delay={(i % 2) * 0.1} y={30}>
+                <FadeIn key={project.number} delay={(i % 2) * 0.08} y={30} className="bg-paper">
                   <a
                     href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.name} live project`}
-                    className="group block rounded-[30px] sm:rounded-[40px] border border-[#D7E2EA]/30 bg-[#0C0C0C] p-4 sm:p-5 md:p-6 touch-manipulation transition-colors duration-200 hover:border-[#D7E2EA]/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7E2EA]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C0C0C]"
+                    aria-label={`${project.client} case study`}
+                    className="group flex flex-col gap-5 p-6 sm:p-8 h-full hover:bg-ink hover:text-paper transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-inset"
                   >
-                    <div className="flex items-center justify-between gap-4 pb-4 sm:pb-5">
-                      <div className="flex items-end gap-3 sm:gap-5 min-w-0">
-                        <span className="font-black text-[#D7E2EA] leading-none tracking-tight text-[clamp(1.75rem,5vw,3.5rem)]">
-                          {project.number}
-                        </span>
-                        <div className="flex flex-col gap-1 pb-1 min-w-0">
-                          <span className="text-[#D7E2EA]/50 font-light uppercase tracking-widest text-[10px] sm:text-xs truncate">
-                            {project.category}
-                          </span>
-                          <h2 className="text-[#D7E2EA] font-black uppercase text-[clamp(1rem,2.5vw,1.6rem)] truncate">
-                            {project.name}
-                          </h2>
-                        </div>
-                      </div>
-                      <span className="flex-shrink-0 text-[#D7E2EA]/40 group-hover:text-[#D7E2EA] group-hover:translate-x-1 transition-all duration-200 text-lg sm:text-xl">
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="font-mono uppercase tracking-widest text-ash group-hover:text-paper/50 text-[10px] sm:text-xs transition-colors duration-300">
+                        [{project.number}] — {project.scope} · {project.year}
+                      </span>
+                      <span className="flex-shrink-0 text-ash group-hover:text-electric group-hover:translate-x-1 transition-all duration-300 text-lg">
                         ↗
                       </span>
                     </div>
-                    <div className="overflow-hidden rounded-[20px] sm:rounded-[28px]">
-                      <img
-                        src={project.image}
-                        alt={`${project.name} website preview`}
-                        width={1600}
-                        height={1000}
-                        loading="lazy"
-                        className="w-full aspect-[16/10] object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
+                    <h2 className="font-display font-extrabold uppercase tracking-tight leading-none mt-2 text-ink group-hover:text-paper transition-colors duration-300 text-[clamp(2rem,5vw,3.25rem)]">
+                      {project.client}
+                    </h2>
+                    <p className="text-ash group-hover:text-paper/70 font-medium leading-relaxed transition-colors duration-300 text-sm sm:text-base">
+                      {project.outcome}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto pt-2">
+                      {project.stack.map((s) => (
+                        <span
+                          key={s}
+                          className="font-mono uppercase tracking-wide text-[10px] text-ash group-hover:text-paper/50 border border-paper-shade group-hover:border-paper/20 rounded-full px-3 py-1 transition-colors duration-300"
+                        >
+                          {s}
+                        </span>
+                      ))}
                     </div>
                   </a>
                 </FadeIn>

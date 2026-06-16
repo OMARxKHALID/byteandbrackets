@@ -1,12 +1,13 @@
-const ContactButton = ({ href = "#contact" }) => {
+const ContactButton = ({ href = "#contact", label = "Start a project" }) => {
   return (
     <a
       href={href}
-      aria-label="Contact me"
-      className="group inline-block p-[1.5px] rounded-full bg-gradient-to-br from-[#646973] to-[#D7E2EA] cursor-pointer touch-manipulation transition-transform duration-200 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7E2EA]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C0C0C]"
+      aria-label={label}
+      className="group inline-flex items-center gap-3 whitespace-nowrap rounded-full bg-electric px-7 py-3.5 sm:px-9 sm:py-4 min-h-[44px] text-sm sm:text-base text-paper font-mono uppercase tracking-wider cursor-pointer touch-manipulation transition-transform duration-200 hover:scale-[1.03] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
     >
-      <span className="block whitespace-nowrap rounded-full bg-[#0C0C0C] group-hover:bg-[#141414] transition-colors duration-200 px-8 py-4 sm:px-12 sm:py-4 md:px-14 md:py-5 text-xs sm:text-sm md:text-base text-[#D7E2EA] font-black uppercase tracking-wider">
-        Contact Me
+      {label}
+      <span className="transition-transform duration-200 group-hover:translate-x-1">
+        →
       </span>
     </a>
   )

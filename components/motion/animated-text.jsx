@@ -1,20 +1,17 @@
 "use client"
 
-import { Fragment, useRef } from "react"
+import { useRef } from "react"
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
 
-const AnimatedChar = ({ char, scrollYProgress, index, total }) => {
+const AnimatedWord = ({ word, scrollYProgress, index, total }) => {
   const start = index / total
   const end = Math.min(start + 1 / total, 1)
   const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1])
 
   return (
-    <span className="relative inline-block" aria-hidden="true">
-      <span className="invisible">{char}</span>
-      <motion.span className="absolute left-0 top-0" style={{ opacity }}>
-        {char}
-      </motion.span>
-    </span>
+    <motion.span className="inline-block whitespace-nowrap" style={{ opacity }}>
+      {word}
+    </motion.span>
   )
 }
 
@@ -30,33 +27,21 @@ const AnimatedText = ({ text, className = "" }) => {
     return <p ref={ref} className={className}>{text}</p>
   }
 
-  const total = text.length
-  let charIndex = 0
   const words = text.split(" ")
 
   return (
     <p ref={ref} className={className} aria-label={text}>
-      {words.map((word, wi) => {
-        const wordSpans = word.split("").map((char) => {
-          const idx = charIndex++
-          return (
-            <AnimatedChar
-              key={idx}
-              char={char}
-              scrollYProgress={scrollYProgress}
-              index={idx}
-              total={total}
-            />
-          )
-        })
-        charIndex++
-        return (
-          <Fragment key={wi}>
-            <span className="inline-block whitespace-nowrap">{wordSpans}</span>
-            {wi < words.length - 1 && " "}
-          </Fragment>
-        )
-      })}
+      {words.map((word, i) => (
+        <span key={i} aria-hidden="true">
+          <AnimatedWord
+            word={word}
+            scrollYProgress={scrollYProgress}
+            index={i}
+            total={words.length}
+          />
+          {i < words.length - 1 && " "}
+        </span>
+      ))}
     </p>
   )
 }
