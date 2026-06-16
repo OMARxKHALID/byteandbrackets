@@ -8,9 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.1",
+    "motion": "^12.40.0",
     "next": "16.2.9",
+    "postcss": "^8.5.15",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "tailwindcss": "^4.3.1"
   },
   "ignoreScripts": [
     "sharp",
@@ -19,5 +23,8 @@
   "trustedDependencies": [
     "sharp",
     "unrs-resolver"
-  ]
+  ],
+  "devDependencies": {
+    "playwright": "^1.61.0"
+  }
 }
