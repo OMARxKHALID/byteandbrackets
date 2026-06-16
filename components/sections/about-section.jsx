@@ -1,7 +1,8 @@
+import Image from "next/image"
 import FadeIn from "../motion/fade-in"
 import AnimatedText from "../motion/animated-text"
 import SectionTag from "../ui/section-tag"
-import { STUDIO_HEADLINE, STUDIO_TEXT, STATS } from "../../lib/data"
+import { STUDIO_HEADLINE, STUDIO_TEXT, STATS, FOUNDER } from "../../lib/data"
 
 const AboutSection = () => {
   return (
@@ -25,10 +26,38 @@ const AboutSection = () => {
           className="text-ink/80 font-medium leading-relaxed mt-8 sm:mt-10 max-w-3xl text-[clamp(1.05rem,2vw,1.5rem)]"
         />
 
+        <FadeIn delay={0.1} y={20}>
+          <figure className="flex items-center gap-4 mt-10 sm:mt-12">
+            <Image
+              src={FOUNDER.portrait}
+              alt={FOUNDER.name}
+              width={620}
+              height={671}
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-paper-shade flex-shrink-0"
+            />
+            <figcaption className="flex flex-col gap-1">
+              <span className="font-display font-bold tracking-tight text-lg sm:text-xl">
+                {FOUNDER.name}
+              </span>
+              <span className="font-mono uppercase tracking-widest text-electric text-[10px] sm:text-xs">
+                {FOUNDER.role}
+              </span>
+            </figcaption>
+          </figure>
+        </FadeIn>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-paper-shade mt-16 sm:mt-20 border border-paper-shade">
           {STATS.map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08} y={20} className="bg-paper">
-              <div className="p-6 sm:p-8 flex flex-col gap-2">
+              <div className="p-6 sm:p-8 flex flex-col gap-3">
+                <Image
+                  src={stat.icon}
+                  alt=""
+                  aria-hidden="true"
+                  width={440}
+                  height={467}
+                  className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                />
                 <span className="font-display font-extrabold text-electric leading-none text-[clamp(2rem,5vw,3.5rem)]">
                   {stat.value}
                 </span>

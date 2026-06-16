@@ -1,6 +1,7 @@
 import Link from "next/link"
 import FadeIn from "../../components/motion/fade-in"
 import FooterSection from "../../components/sections/footer-section"
+import ProjectMedia from "../../components/ui/project-media"
 import { PROJECTS, BRAND_SHORT } from "../../lib/data"
 
 export const metadata = {
@@ -61,6 +62,13 @@ const ProjectsPage = () => {
                     aria-label={`${project.client} case study`}
                     className="group flex flex-col gap-5 p-6 sm:p-8 h-full hover:bg-ink hover:text-paper transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-inset"
                   >
+                    <ProjectMedia
+                      image={project.image}
+                      video={project.video}
+                      alt={`${project.client} — ${project.scope}`}
+                      priority={i < 2}
+                      className="aspect-[16/10] w-full rounded-[12px] sm:rounded-[16px] border border-paper-shade"
+                    />
                     <div className="flex items-start justify-between gap-4">
                       <span className="font-mono uppercase tracking-widest text-ash group-hover:text-paper/50 text-[10px] sm:text-xs transition-colors duration-300">
                         [{project.number}] — {project.scope} · {project.year}
