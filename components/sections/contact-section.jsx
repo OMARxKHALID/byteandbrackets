@@ -39,7 +39,7 @@ const ContactSection = () => {
         <FadeIn delay={0.15} y={20}>
           <div className="flex flex-wrap items-center justify-between gap-6">
             <div className="flex flex-wrap items-center gap-6 sm:gap-10">
-              <span className="font-mono uppercase tracking-widest text-paper/40 text-[10px] sm:text-xs">
+              <span className="font-mono uppercase tracking-widest text-paper/60 text-[10px] sm:text-xs">
                 {LOCATION}
               </span>
               <span className="flex items-center gap-2 font-mono uppercase tracking-widest text-paper/60 text-[10px] sm:text-xs">
@@ -55,7 +55,7 @@ const ContactSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="font-mono uppercase tracking-widest text-paper/40 hover:text-electric text-[10px] sm:text-xs transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-paper/40 rounded-sm"
+                  className="font-mono uppercase tracking-widest text-paper/60 hover:text-electric text-[10px] sm:text-xs transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-paper/40 rounded-sm"
                 >
                   {s.label}
                 </a>

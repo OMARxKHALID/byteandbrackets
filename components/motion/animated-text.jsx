@@ -6,7 +6,7 @@ import { m, useScroll, useTransform, useReducedMotion } from "motion/react"
 const AnimatedWord = ({ word, scrollYProgress, index, total }) => {
   const start = index / total
   const end = Math.min(start + 1 / total, 1)
-  const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1])
+  const opacity = useTransform(scrollYProgress, [start, end], [0.35, 1])
 
   return (
     <m.span className="inline-block whitespace-nowrap" style={{ opacity }}>

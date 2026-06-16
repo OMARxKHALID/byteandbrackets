@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import Link from "next/link"
-import { m, useScroll, useTransform } from "motion/react"
+import { m, useScroll, useTransform, useReducedMotion } from "motion/react"
 import FadeIn from "../motion/fade-in"
 import SectionTag from "../ui/section-tag"
 import LiveProjectButton from "../ui/live-project-button"
@@ -49,18 +49,24 @@ const SpecPanel = ({ project }) => {
 }
 
 const ProjectCard = ({ project, index, totalCards, range, progress }) => {
+  const shouldReduce = useReducedMotion()
   const targetScale = 1 - (totalCards - 1 - index) * 0.03
   const scale = useTransform(progress, range, [1, targetScale])
 
+  const wrapperClass = shouldReduce ? "mb-6 last:mb-0" : "h-[64dvh] sm:h-[68dvh]"
+  const cardBase = "w-full rounded-[28px] sm:rounded-[40px] md:rounded-[56px] bg-ink text-paper p-6 sm:p-8 md:p-10 origin-top overflow-hidden grid grid-rows-[auto_1fr] md:grid-rows-1 md:grid-cols-[1.1fr_0.9fr] gap-6 md:gap-10"
+  const cardClass = shouldReduce ? cardBase : `sticky h-full ${cardBase}`
+  const cardStyle = shouldReduce ? {} : { scale, top: `${5 + index * 1.5}rem` }
+
   return (
-    <div className="h-[64vh] sm:h-[68vh]">
+    <div className={wrapperClass}>
       <m.div
-        className="sticky w-full h-full rounded-[28px] sm:rounded-[40px] md:rounded-[56px] bg-ink text-paper p-6 sm:p-8 md:p-10 origin-top overflow-hidden grid grid-rows-[auto_1fr] md:grid-rows-1 md:grid-cols-[1.1fr_0.9fr] gap-6 md:gap-10"
-        style={{ scale, top: `${5 + index * 1.5}rem` }}
+        className={cardClass}
+        style={cardStyle}
       >
         <div className="flex flex-col">
           <div className="flex items-center justify-between gap-4">
-            <span className="font-mono uppercase tracking-widest text-paper/50 text-[10px] sm:text-xs">
+            <span className="font-mono uppercase tracking-widest text-paper/65 text-[10px] sm:text-xs">
               [{project.number}] — {project.scope} · {project.year}
             </span>
             <div className="hidden sm:block">

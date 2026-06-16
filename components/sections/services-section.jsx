@@ -22,10 +22,7 @@ const ServicesSection = () => {
           {SERVICES.map((service, i) => (
             <li key={service.number} className="border-b border-paper/15">
               <FadeIn delay={i * 0.06} y={20}>
-                <div className="group grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-start gap-4 md:gap-10 py-8 sm:py-10 md:py-12 transition-colors duration-300">
-                  <span className="font-mono text-electric text-sm sm:text-base leading-none pt-1">
-                    [{service.number}]
-                  </span>
+                <div className="group grid grid-cols-1 md:grid-cols-[1fr_auto] items-start gap-4 md:gap-10 py-8 sm:py-10 md:py-12 transition-colors duration-300">
                   <div className="flex flex-col gap-3">
                     <h3 className="font-display font-bold uppercase tracking-tight leading-none text-[clamp(1.75rem,5vw,3.5rem)] group-hover:text-electric transition-colors duration-300">
                       {service.name}

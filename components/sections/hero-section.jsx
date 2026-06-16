@@ -5,7 +5,7 @@ import { NAV_LINKS, BRAND_SHORT, HERO_THESIS, AVAILABILITY } from "../../lib/dat
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col min-h-screen lg:min-h-[760px] [overflow-x:clip]">
+    <section className="relative flex flex-col min-h-dvh lg:min-h-[760px] [overflow-x:clip]">
       <FadeIn delay={0} y={-20}>
         <nav className="flex items-center justify-between px-6 sm:px-10 md:px-16 pt-6 md:pt-8">
           <a
