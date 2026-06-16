@@ -21,7 +21,7 @@ const HeroSection = () => {
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="font-mono uppercase tracking-wide text-xs lg:text-sm text-ink/70 hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm py-2"
+                className="font-mono uppercase tracking-wide text-xs lg:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm py-2"
               >
                 {link}
               </a>
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20} className="flex flex-col items-start sm:items-end gap-4">
-          <span className="flex items-center gap-2 font-mono uppercase tracking-widest text-[10px] sm:text-xs text-ink/60">
+          <span className="flex items-center gap-2 font-mono uppercase tracking-widest text-[10px] sm:text-xs text-ash">
             <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse flex-shrink-0" />
             {AVAILABILITY}
           </span>

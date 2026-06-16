@@ -26,7 +26,7 @@ const ProjectsPage = () => {
               <Link
                 href="/"
                 aria-label="Back to home"
-                className="group inline-flex items-center gap-2 py-3 font-mono uppercase tracking-wide text-xs sm:text-sm text-ink/70 hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
+                className="group inline-flex items-center gap-2 py-3 font-mono uppercase tracking-wide text-xs sm:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
               >
                 <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span>
                 Back

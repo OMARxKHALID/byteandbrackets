@@ -12,7 +12,7 @@ const FEATURED = PROJECTS.slice(0, 5)
 
 const SpecPanel = ({ project }) => {
   return (
-    <div className="h-full rounded-[16px] sm:rounded-[22px] bg-black/30 border border-paper/10 p-5 sm:p-7 flex flex-col justify-center font-mono text-[clamp(0.7rem,1.4vw,0.95rem)] leading-relaxed overflow-hidden">
+    <div className="h-full rounded-[16px] sm:rounded-[22px] bg-black/30 border border-paper/15 p-5 sm:p-7 flex flex-col justify-center font-mono text-[clamp(0.7rem,1.4vw,0.95rem)] leading-relaxed overflow-hidden">
       <span className="text-paper/30">{"{"}</span>
       <div className="pl-4 sm:pl-6 flex flex-col gap-1.5 py-1">
         <span>

@@ -30,6 +30,27 @@
 
 html {
   color-scheme: light;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink) var(--color-paper-shade);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper-shade);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border: 3px solid var(--color-paper-shade);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-electric);
 }
 
 html,

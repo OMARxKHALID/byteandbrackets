@@ -53,6 +53,7 @@ const RootLayout = ({ children }) => {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${display.variable} ${body.variable} ${mono.variable}`}
     >
       <body className={body.className}>
