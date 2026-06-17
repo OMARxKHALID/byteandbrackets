@@ -1,7 +1,8 @@
-import Image from "next/image"
 import FadeIn from "../motion/fade-in"
 import AnimatedText from "../motion/animated-text"
 import CountUp from "../motion/count-up"
+import TiltPortrait from "../motion/tilt-portrait"
+import FloatIcon from "../motion/float-icon"
 import SectionTag from "../ui/section-tag"
 import { STUDIO_HEADLINE, STUDIO_TEXT, STATS, FOUNDER } from "../../lib/data"
 
@@ -29,12 +30,12 @@ const AboutSection = () => {
 
         <FadeIn delay={0.1} y={20}>
           <figure className="flex items-center gap-4 mt-10 sm:mt-12">
-            <Image
+            <TiltPortrait
               src={FOUNDER.portrait}
               alt={FOUNDER.name}
               width={620}
               height={671}
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-paper-shade flex-shrink-0"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-paper-shade"
             />
             <figcaption className="flex flex-col gap-1">
               <span className="font-display font-bold tracking-tight text-lg sm:text-xl">
@@ -51,12 +52,11 @@ const AboutSection = () => {
           {STATS.map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08} y={20} className="bg-paper">
               <div className="p-6 sm:p-8 flex flex-col gap-3">
-                <Image
+                <FloatIcon
                   src={stat.icon}
-                  alt=""
-                  aria-hidden="true"
                   width={440}
                   height={467}
+                  delay={i * 0.4}
                   className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
                 />
                 <CountUp
