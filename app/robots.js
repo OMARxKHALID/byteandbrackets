@@ -1,4 +1,4 @@
-const BASE = "https://byteandbrackets.dev"
+import { SITE_URL as BASE } from "../lib/data"
 
 const robots = () => ({
   rules: {

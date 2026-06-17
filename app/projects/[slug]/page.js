@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import FadeIn from "../../../components/motion/fade-in"
 import FooterSection from "../../../components/sections/footer-section"
 import ProjectMedia from "../../../components/ui/project-media"
-import { PROJECTS, BRAND_SHORT } from "../../../lib/data"
+import { PROJECTS, BRAND_SHORT, SITE_URL } from "../../../lib/data"
 
 const getProject = (slug) => PROJECTS.find((p) => p.slug === slug)
 
@@ -18,7 +18,7 @@ export const generateMetadata = async ({ params }) => {
     title,
     description: project.outcome,
     alternates: {
-      canonical: `/work/${slug}`,
+      canonical: `/projects/${slug}`,
     },
     openGraph: {
       title: `${title} · Byte & Brackets`,
@@ -50,7 +50,7 @@ const Block = ({ label, children }) => (
   </FadeIn>
 )
 
-const CaseStudyPage = async ({ params }) => {
+const ProjectPage = async ({ params }) => {
   const { slug } = await params
   const project = getProject(slug)
   if (!project) notFound()
@@ -58,7 +58,7 @@ const CaseStudyPage = async ({ params }) => {
   const index = PROJECTS.findIndex((p) => p.slug === slug)
   const next = PROJECTS[(index + 1) % PROJECTS.length]
 
-  const caseStudyLd = [
+  const projectLd = [
     {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
@@ -72,9 +72,9 @@ const CaseStudyPage = async ({ params }) => {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://byteandbrackets.dev" },
-        { "@type": "ListItem", position: 2, name: "Work", item: "https://byteandbrackets.dev/projects" },
-        { "@type": "ListItem", position: 3, name: project.client, item: `https://byteandbrackets.dev/work/${slug}` },
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        { "@type": "ListItem", position: 2, name: "Projects", item: `${SITE_URL}/projects` },
+        { "@type": "ListItem", position: 3, name: project.client, item: `${SITE_URL}/projects/${slug}` },
       ],
     },
   ]
@@ -83,7 +83,7 @@ const CaseStudyPage = async ({ params }) => {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectLd) }}
       />
       <main id="main-content" className="relative z-10 [overflow-x:clip]">
         <a
@@ -98,11 +98,11 @@ const CaseStudyPage = async ({ params }) => {
             <nav className="flex items-center justify-between">
               <Link
                 href="/projects"
-                aria-label="Back to all work"
+                aria-label="Back to all projects"
                 className="group inline-flex items-center gap-2 py-3 min-h-[44px] touch-manipulation font-mono uppercase tracking-wide text-xs sm:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
               >
                 <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span>
-                All work
+                All projects
               </Link>
               <Link
                 href="/"
@@ -189,12 +189,12 @@ const CaseStudyPage = async ({ params }) => {
         <section className="px-6 sm:px-10 md:px-16 pb-20 sm:pb-24 md:pb-28">
           <div className="max-w-6xl mx-auto border-t border-paper-shade pt-8 sm:pt-10">
             <Link
-              href={`/work/${next.slug}`}
-              aria-label={`Next case study: ${next.client}`}
+              href={`/projects/${next.slug}`}
+              aria-label={`Next project: ${next.client}`}
               className="group flex items-center justify-between gap-6 py-2 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
             >
               <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
-                Next case study
+                Next project
               </span>
               <span className="flex items-center gap-4 font-display font-extrabold uppercase tracking-tight leading-none text-ink group-hover:text-electric transition-colors duration-300 text-[clamp(1.75rem,6vw,4rem)]">
                 {next.client}
@@ -209,4 +209,4 @@ const CaseStudyPage = async ({ params }) => {
   )
 }
 
-export default CaseStudyPage
+export default ProjectPage

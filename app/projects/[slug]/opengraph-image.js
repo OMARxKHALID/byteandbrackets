@@ -2,7 +2,7 @@ import { renderOg, size, contentType } from "../../../lib/og-image"
 import { PROJECTS } from "../../../lib/data"
 
 export { size, contentType }
-export const alt = "Case study — Byte & Brackets"
+export const alt = "Project — Byte & Brackets"
 
 export const generateStaticParams = () => PROJECTS.map((project) => ({ slug: project.slug }))
 

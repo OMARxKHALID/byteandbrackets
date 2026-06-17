@@ -5,7 +5,7 @@ import ProjectMedia from "../../components/ui/project-media"
 import { PROJECTS, BRAND_SHORT } from "../../lib/data"
 
 export const metadata = {
-  title: "Work",
+  title: "Projects",
   description: "Selected software products designed, built, and shipped by Byte & Brackets.",
   alternates: {
     canonical: "/projects",
@@ -49,11 +49,11 @@ const ProjectsPage = () => {
         <section className="px-6 sm:px-10 md:px-16 pt-16 sm:pt-20 md:pt-28 pb-20 sm:pb-24 md:pb-32">
           <div className="max-w-6xl mx-auto">
             <FadeIn delay={0} y={30}>
-              <span className="eyebrow">[ {PROJECTS.length} selected works ]</span>
+              <span className="eyebrow">[ {PROJECTS.length} projects ]</span>
             </FadeIn>
             <FadeIn delay={0.05} y={30}>
               <h1 className="font-display font-extrabold uppercase leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(3rem,12vw,9rem)]">
-                The work
+                Projects
               </h1>
             </FadeIn>
 
@@ -61,8 +61,8 @@ const ProjectsPage = () => {
               {PROJECTS.map((project, i) => (
                 <FadeIn key={project.number} delay={(i % 2) * 0.08} y={30} className="bg-paper">
                   <Link
-                    href={`/work/${project.slug}`}
-                    aria-label={`${project.client} case study`}
+                    href={`/projects/${project.slug}`}
+                    aria-label={`${project.client} project`}
                     className="group flex flex-col gap-5 p-6 sm:p-8 h-full hover:bg-ink hover:text-paper transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-inset"
                   >
                     <ProjectMedia

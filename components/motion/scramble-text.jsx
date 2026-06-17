@@ -9,13 +9,11 @@ const ScrambleText = ({ text, className = "" }) => {
   const shouldReduce = useReducedMotion()
   const ref = useRef(null)
   const started = useRef(false)
+  const [scrambling, setScrambling] = useState(false)
   const [display, setDisplay] = useState(text)
 
   useEffect(() => {
-    if (shouldReduce) {
-      setDisplay(text)
-      return
-    }
+    if (shouldReduce) return
     const el = ref.current
     if (!el) return
 
@@ -24,6 +22,7 @@ const ScrambleText = ({ text, className = "" }) => {
       const total = text.length
       const frames = Math.min(total * 2 + 8, 52)
       let frame = 0
+      setScrambling(true)
       const tick = () => {
         const revealed = Math.floor((frame / frames) * total)
         let out = ""
@@ -35,7 +34,7 @@ const ScrambleText = ({ text, className = "" }) => {
         setDisplay(out)
         frame += 1
         if (frame <= frames) raf = requestAnimationFrame(tick)
-        else setDisplay(text)
+        else setScrambling(false)
       }
       tick()
     }
@@ -59,8 +58,18 @@ const ScrambleText = ({ text, className = "" }) => {
   }, [text, shouldReduce])
 
   return (
-    <span ref={ref} className={className} aria-label={text}>
-      <span aria-hidden="true">{display}</span>
+    <span ref={ref} className={`relative inline-block align-top ${className}`} aria-label={text}>
+      <span aria-hidden="true" className={scrambling ? "invisible" : undefined}>
+        {text}
+      </span>
+      {scrambling && (
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 overflow-hidden whitespace-pre-wrap break-words"
+        >
+          {display}
+        </span>
+      )}
     </span>
   )
 }

@@ -2,9 +2,7 @@ import { Bricolage_Grotesque, Hanken_Grotesk, JetBrains_Mono } from "next/font/g
 import "./globals.css"
 import MotionProvider from "../components/motion/motion-provider"
 import ScrollProgress from "../components/motion/scroll-progress"
-import { BRAND, CONTACT_EMAIL } from "../lib/data"
-
-const SITE_URL = "https://byteandbrackets.dev"
+import { BRAND, CONTACT_EMAIL, SITE_URL } from "../lib/data"
 
 const siteLd = [
   {
@@ -60,7 +58,7 @@ export const metadata = {
     title: "Byte & Brackets — Software Studio",
     description:
       "Byte & Brackets is a product-engineering studio. We design, build, and ship web apps, SaaS platforms, and AI products for teams who need to move fast.",
-    url: "https://byteandbrackets.dev",
+    url: SITE_URL,
     siteName: "Byte & Brackets",
     type: "website",
   },

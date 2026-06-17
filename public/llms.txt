@@ -10,19 +10,19 @@
 - Cloud & Infra — CI/CD, infrastructure-as-code, observability; boring, reliable releases.
 - MVP Sprints — zero to a usable product in weeks, not quarters.
 
-## Selected work
+## Selected projects
 
-- [Ledgerline — Fintech platform](https://byteandbrackets.dev/work/ledgerline): month-end close from four days to a single afternoon.
-- [Northwind — Healthcare portal](https://byteandbrackets.dev/work/northwind): patient portal live across forty clinics in under five months.
-- [Cargo — Logistics dashboard](https://byteandbrackets.dev/work/cargo): realtime tracking holding over a million events a day.
-- [Verra — AI writing tool](https://byteandbrackets.dev/work/verra): an LLM demo turned into a product people pay for.
-- [Tidepool — Analytics SaaS](https://byteandbrackets.dev/work/tidepool): sub-second queries across billions of rows.
-- [Forge — Developer tooling](https://byteandbrackets.dev/work/forge): CI pipelines from twenty minutes to seven.
+- [Ledgerline — Fintech platform](https://byteandbrackets.dev/projects/ledgerline): month-end close from four days to a single afternoon.
+- [Northwind — Healthcare portal](https://byteandbrackets.dev/projects/northwind): patient portal live across forty clinics in under five months.
+- [Cargo — Logistics dashboard](https://byteandbrackets.dev/projects/cargo): realtime tracking holding over a million events a day.
+- [Verra — AI writing tool](https://byteandbrackets.dev/projects/verra): an LLM demo turned into a product people pay for.
+- [Tidepool — Analytics SaaS](https://byteandbrackets.dev/projects/tidepool): sub-second queries across billions of rows.
+- [Forge — Developer tooling](https://byteandbrackets.dev/projects/forge): CI pipelines from twenty minutes to seven.
 
 ## Pages
 
 - [Home](https://byteandbrackets.dev)
-- [All work](https://byteandbrackets.dev/projects)
+- [All projects](https://byteandbrackets.dev/projects)
 
 ## Contact
 

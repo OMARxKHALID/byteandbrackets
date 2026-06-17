@@ -1,4 +1,4 @@
-const LiveProjectButton = ({ href = "#", label = "Case study" }) => {
+const LiveProjectButton = ({ href = "#", label = "View project" }) => {
   return (
     <a
       href={href}

@@ -62,8 +62,8 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
   return (
     <div className={wrapperClass}>
       <Link
-        href={`/work/${project.slug}`}
-        aria-label={`${project.client} case study`}
+        href={`/projects/${project.slug}`}
+        aria-label={`${project.client} project`}
         className="group block h-full rounded-[28px] sm:rounded-[40px] md:rounded-[56px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
       >
         <m.div
@@ -76,8 +76,8 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
                 [{project.number}] — {project.scope} · {project.year}
               </span>
               <span className="flex items-center gap-2 font-mono uppercase tracking-wider text-paper/65 group-hover:text-electric text-[10px] sm:text-xs whitespace-nowrap transition-colors duration-200">
-                Case study
-                <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200">↗</span>
+                View project
+                <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200">→</span>
               </span>
             </div>
 
@@ -109,13 +109,13 @@ const ProjectsSection = () => {
 
   return (
     <section
-      id="work"
+      id="projects"
       ref={containerRef}
-      className="px-6 sm:px-10 md:px-16 py-20 sm:py-24 md:py-32 relative z-10"
+      className="px-6 sm:px-10 md:px-16 pt-12 sm:pt-16 pb-20 sm:pb-24 md:pb-32 relative z-10"
     >
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={20}>
-          <SectionTag index="01" label="selected work" />
+          <SectionTag index="01" label="selected projects" />
         </FadeIn>
         <FadeIn delay={0.05} y={30}>
           <h2 className="font-display font-extrabold uppercase leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(2.5rem,9vw,7rem)]">

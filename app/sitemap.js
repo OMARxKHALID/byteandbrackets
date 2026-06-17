@@ -1,6 +1,4 @@
-import { PROJECTS } from "../lib/data"
-
-const BASE = "https://byteandbrackets.dev"
+import { PROJECTS, SITE_URL as BASE } from "../lib/data"
 
 const sitemap = () => {
   const now = new Date()
@@ -13,7 +11,7 @@ const sitemap = () => {
   }))
 
   const work = PROJECTS.map((project) => ({
-    url: `${BASE}/work/${project.slug}`,
+    url: `${BASE}/projects/${project.slug}`,
     lastModified: now,
     changeFrequency: "yearly",
     priority: 0.6,
