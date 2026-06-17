@@ -1,6 +1,7 @@
 import FadeIn from "../motion/fade-in"
 import TypedText from "../motion/typed-text"
-import ScrollDrift from "../motion/scroll-drift"
+import HeroBracket from "../motion/hero-bracket"
+import HeroZoom from "../motion/hero-zoom"
 import ContactButton from "../ui/contact-button"
 import MobileNav from "../ui/mobile-nav"
 import DesktopNav from "../ui/desktop-nav"
@@ -24,7 +25,7 @@ const HeroSection = () => {
         </nav>
       </FadeIn>
 
-      <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
+      <HeroZoom className="flex-1 flex flex-col items-center justify-center px-4 py-12">
         <FadeIn delay={0.1} y={20} className="mb-6 sm:mb-8">
           <span className="eyebrow inline-flex items-center gap-2">
             <TypedText text="Product engineering studio · est. 2019" />
@@ -34,14 +35,7 @@ const HeroSection = () => {
 
         <div className="flex items-center justify-center gap-2 sm:gap-5 md:gap-8 w-full">
           <FadeIn delay={0.35} x={110} y={0}>
-            <ScrollDrift x={-70}>
-              <span
-                aria-hidden="true"
-                className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
-              >
-                [
-              </span>
-            </ScrollDrift>
+            <HeroBracket char="[" side={-1} />
           </FadeIn>
 
           <FadeIn delay={0.15} y={30} className="text-center">
@@ -53,17 +47,10 @@ const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.35} x={-110} y={0}>
-            <ScrollDrift x={70}>
-              <span
-                aria-hidden="true"
-                className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
-              >
-                ]
-              </span>
-            </ScrollDrift>
+            <HeroBracket char="]" side={1} />
           </FadeIn>
         </div>
-      </div>
+      </HeroZoom>
 
       <div className="w-full flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between pt-6 pb-10 sm:pb-12 px-6 sm:px-10 md:px-16">
         <FadeIn delay={0.4} y={20}>
