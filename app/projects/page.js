@@ -5,8 +5,11 @@ import ProjectMedia from "../../components/ui/project-media"
 import { PROJECTS, BRAND_SHORT } from "../../lib/data"
 
 export const metadata = {
-  title: "Work — Byte & Brackets",
+  title: "Work",
   description: "Selected software products designed, built, and shipped by Byte & Brackets.",
+  alternates: {
+    canonical: "/projects",
+  },
 }
 
 const ProjectsPage = () => {

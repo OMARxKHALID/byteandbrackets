@@ -1,0 +1,30 @@
+# Byte & Brackets
+
+> Byte & Brackets is a product-engineering studio. A small senior team that designs, builds, and ships web apps, SaaS platforms, AI products, and developer tooling — and stays until it runs in production. The people who scope a project are the people who write the code: no account managers, no handoffs to juniors.
+
+## What we do
+
+- Product Engineering — full-stack web apps and SaaS, typed end-to-end, deployed on infrastructure you own.
+- AI Integration — LLM features that survive real users: agents, RAG, evals, and guardrails.
+- Design Systems — accessible component libraries, tokens, and motion handled at the source.
+- Cloud & Infra — CI/CD, infrastructure-as-code, observability; boring, reliable releases.
+- MVP Sprints — zero to a usable product in weeks, not quarters.
+
+## Selected work
+
+- [Ledgerline — Fintech platform](https://byteandbrackets.dev/work/ledgerline): month-end close from four days to a single afternoon.
+- [Northwind — Healthcare portal](https://byteandbrackets.dev/work/northwind): patient portal live across forty clinics in under five months.
+- [Cargo — Logistics dashboard](https://byteandbrackets.dev/work/cargo): realtime tracking holding over a million events a day.
+- [Verra — AI writing tool](https://byteandbrackets.dev/work/verra): an LLM demo turned into a product people pay for.
+- [Tidepool — Analytics SaaS](https://byteandbrackets.dev/work/tidepool): sub-second queries across billions of rows.
+- [Forge — Developer tooling](https://byteandbrackets.dev/work/forge): CI pipelines from twenty minutes to seven.
+
+## Pages
+
+- [Home](https://byteandbrackets.dev)
+- [All work](https://byteandbrackets.dev/projects)
+
+## Contact
+
+- Email: hello@byteandbrackets.dev
+- Location: Remote — Berlin / NYC

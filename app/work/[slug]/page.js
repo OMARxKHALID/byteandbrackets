@@ -13,14 +13,16 @@ export const generateMetadata = async ({ params }) => {
   const { slug } = await params
   const project = getProject(slug)
   if (!project) return {}
-  const title = `${project.client} — ${project.scope} · Byte & Brackets`
+  const title = `${project.client} — ${project.scope}`
   return {
     title,
     description: project.outcome,
+    alternates: {
+      canonical: `/work/${slug}`,
+    },
     openGraph: {
-      title,
+      title: `${title} · Byte & Brackets`,
       description: project.outcome,
-      images: [project.image],
       type: "article",
     },
   }
@@ -56,8 +58,33 @@ const CaseStudyPage = async ({ params }) => {
   const index = PROJECTS.findIndex((p) => p.slug === slug)
   const next = PROJECTS[(index + 1) % PROJECTS.length]
 
+  const caseStudyLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: project.client,
+      about: project.scope,
+      description: project.outcome,
+      datePublished: project.year,
+      creator: { "@type": "Organization", name: "Byte & Brackets" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://byteandbrackets.dev" },
+        { "@type": "ListItem", position: 2, name: "Work", item: "https://byteandbrackets.dev/projects" },
+        { "@type": "ListItem", position: 3, name: project.client, item: `https://byteandbrackets.dev/work/${slug}` },
+      ],
+    },
+  ]
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyLd) }}
+      />
       <main id="main-content" className="relative z-10 [overflow-x:clip]">
         <a
           href="#main-content"

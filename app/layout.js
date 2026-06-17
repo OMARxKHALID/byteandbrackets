@@ -2,6 +2,27 @@ import { Bricolage_Grotesque, Hanken_Grotesk, JetBrains_Mono } from "next/font/g
 import "./globals.css"
 import MotionProvider from "../components/motion/motion-provider"
 import ScrollProgress from "../components/motion/scroll-progress"
+import { BRAND, CONTACT_EMAIL } from "../lib/data"
+
+const SITE_URL = "https://byteandbrackets.dev"
+
+const siteLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: BRAND,
+    url: SITE_URL,
+    email: CONTACT_EMAIL,
+    description:
+      "Product-engineering studio. We design, build, and ship web apps, SaaS platforms, and AI products.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: BRAND,
+    url: SITE_URL,
+  },
+]
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -25,10 +46,16 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata = {
-  metadataBase: new URL("https://byteandbrackets.dev"),
-  title: "Byte & Brackets — Software Studio",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Byte & Brackets — Software Studio",
+    template: "%s · Byte & Brackets",
+  },
   description:
     "Byte & Brackets is a product-engineering studio. We design, build, and ship web apps, SaaS platforms, and AI products for teams who need to move fast.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Byte & Brackets — Software Studio",
     description:
@@ -58,6 +85,10 @@ const RootLayout = ({ children }) => {
       className={`${display.variable} ${body.variable} ${mono.variable}`}
     >
       <body className={body.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }}
+        />
         <MotionProvider>
           <ScrollProgress />
           {children}
