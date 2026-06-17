@@ -10,11 +10,13 @@ const ProjectMedia = ({
   alt,
   priority = false,
   sizes = "(max-width: 768px) 100vw, 50vw",
+  fit = "cover",
   className = "",
 }) => {
   const videoRef = useRef(null)
   const shouldReduce = useReducedMotion()
   const [active, setActive] = useState(false)
+  const fitClass = fit === "contain" ? "object-contain" : "object-cover object-top"
 
   const handleEnter = () => {
     if (shouldReduce || !videoRef.current) return
@@ -43,7 +45,7 @@ const ProjectMedia = ({
         fill
         priority={priority}
         sizes={sizes}
-        className="object-cover"
+        className={fitClass}
       />
       {!shouldReduce && video && (
         <video
@@ -54,7 +56,7 @@ const ProjectMedia = ({
           playsInline
           preload="none"
           aria-hidden="true"
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${active ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full ${fitClass} transition-opacity duration-500 ${active ? "opacity-100" : "opacity-0"}`}
         />
       )}
     </div>
