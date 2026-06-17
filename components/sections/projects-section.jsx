@@ -72,10 +72,10 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
         >
           <div className="flex flex-col">
             <div className="flex items-center justify-between gap-4">
-              <span className="font-mono uppercase tracking-widest text-paper/65 text-[10px] sm:text-xs">
+              <span className="font-mono uppercase tracking-widest text-paper/60 text-[10px] sm:text-xs">
                 [{project.number}] — {project.scope} · {project.year}
               </span>
-              <span className="flex items-center gap-2 font-mono uppercase tracking-wider text-paper/65 group-hover:text-electric text-[10px] sm:text-xs whitespace-nowrap transition-colors duration-200">
+              <span className="flex items-center gap-2 font-mono uppercase tracking-wider text-paper/60 group-hover:text-electric text-[10px] sm:text-xs whitespace-nowrap transition-colors duration-200">
                 View project
                 <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200">→</span>
               </span>
@@ -84,7 +84,7 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
             <h3 className="font-display font-extrabold uppercase leading-[0.85] tracking-tight mt-6 md:mt-auto text-[clamp(2.75rem,8vw,6rem)]">
               {project.client}
             </h3>
-            <p className="text-paper/65 font-medium leading-relaxed max-w-lg mt-5 sm:mt-6 text-[clamp(0.95rem,1.6vw,1.2rem)]">
+            <p className="text-paper/60 font-medium leading-relaxed max-w-lg mt-5 sm:mt-6 text-[clamp(0.95rem,1.6vw,1.2rem)]">
               {project.outcome}
             </p>
           </div>

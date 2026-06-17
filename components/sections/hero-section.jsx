@@ -1,5 +1,6 @@
 import FadeIn from "../motion/fade-in"
 import TypedText from "../motion/typed-text"
+import ScrollDrift from "../motion/scroll-drift"
 import ContactButton from "../ui/contact-button"
 import MobileNav from "../ui/mobile-nav"
 import DesktopNav from "../ui/desktop-nav"
@@ -33,12 +34,14 @@ const HeroSection = () => {
 
         <div className="flex items-center justify-center gap-2 sm:gap-5 md:gap-8 w-full">
           <FadeIn delay={0.35} x={110} y={0}>
-            <span
-              aria-hidden="true"
-              className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
-            >
-              [
-            </span>
+            <ScrollDrift x={-70}>
+              <span
+                aria-hidden="true"
+                className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
+              >
+                [
+              </span>
+            </ScrollDrift>
           </FadeIn>
 
           <FadeIn delay={0.15} y={30} className="text-center">
@@ -50,12 +53,14 @@ const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.35} x={-110} y={0}>
-            <span
-              aria-hidden="true"
-              className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
-            >
-              ]
-            </span>
+            <ScrollDrift x={70}>
+              <span
+                aria-hidden="true"
+                className="font-display font-extrabold leading-none text-electric text-[clamp(5rem,18vw,17rem)]"
+              >
+                ]
+              </span>
+            </ScrollDrift>
           </FadeIn>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import FadeIn from "../motion/fade-in"
+import ScrollScale from "../motion/scroll-scale"
 import SectionTag from "../ui/section-tag"
 import { CONTACT_EMAIL, LOCATION, AVAILABILITY, SOCIALS } from "../../lib/data"
 
@@ -13,13 +14,13 @@ const ContactSection = () => {
           <SectionTag index="07" label="start here" dark />
         </FadeIn>
 
-        <FadeIn delay={0.05} y={30}>
+        <ScrollScale>
           <h2 className="font-display font-extrabold uppercase leading-[0.85] tracking-tight text-[clamp(2.5rem,11vw,9rem)]">
             <span className="text-electric">[</span> Let&apos;s
             <br />
             build it <span className="text-electric">]</span>
           </h2>
-        </FadeIn>
+        </ScrollScale>
 
         <FadeIn delay={0.1} y={20}>
           <a

@@ -1,13 +1,13 @@
-import HeroSection from "../components/sections/hero-section"
-import MarqueeSection from "../components/sections/marquee-section"
-import ProjectsSection from "../components/sections/projects-section"
-import ServicesSection from "../components/sections/services-section"
-import ProcessSection from "../components/sections/process-section"
-import AboutSection from "../components/sections/about-section"
-import TeamSection from "../components/sections/team-section"
-import TestimonialsSection from "../components/sections/testimonials-section"
-import ContactSection from "../components/sections/contact-section"
-import FooterSection from "../components/sections/footer-section"
+import HeroSection from "../components/sections/hero-section";
+import MarqueeSection from "../components/sections/marquee-section";
+import ProjectsSection from "../components/sections/projects-section";
+import ServicesSection from "../components/sections/services-section";
+import ProcessSection from "../components/sections/process-section";
+import AboutSection from "../components/sections/about-section";
+import TeamSection from "../components/sections/team-section";
+import TestimonialsSection from "../components/sections/testimonials-section";
+import ContactSection from "../components/sections/contact-section";
+import FooterSection from "../components/sections/footer-section";
 
 const Home = () => {
   return (
@@ -31,7 +31,7 @@ const Home = () => {
       </main>
       <FooterSection />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

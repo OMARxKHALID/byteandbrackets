@@ -1,5 +1,6 @@
 import FadeIn from "../motion/fade-in"
 import ScrambleText from "../motion/scramble-text"
+import DrawBar from "../motion/draw-bar"
 import SectionTag from "../ui/section-tag"
 import { PROCESS } from "../../lib/data"
 
@@ -25,6 +26,8 @@ const ProcessSection = () => {
           </FadeIn>
         </div>
 
+        <DrawBar className="h-px w-full bg-electric/50 mb-8 sm:mb-10" duration={1.1} />
+
         <ol className="list-none grid grid-cols-1 md:grid-cols-5 gap-px bg-paper-shade border border-paper-shade">
           {PROCESS.map((step, i) => (
             <li key={step.number} className="bg-paper">
@@ -39,7 +42,7 @@ const ProcessSection = () => {
                   <h3 className="font-display font-bold uppercase tracking-tight leading-none text-[clamp(1.25rem,2.4vw,1.7rem)]">
                     {step.name}
                   </h3>
-                  <p className="text-ash group-hover:text-paper/70 font-medium leading-relaxed text-sm transition-colors duration-300">
+                  <p className="text-ash group-hover:text-paper/60 font-medium leading-relaxed text-sm transition-colors duration-300">
                     {step.description}
                   </p>
                 </div>

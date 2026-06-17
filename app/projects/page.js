@@ -90,7 +90,7 @@ const ProjectsPage = () => {
                       {project.stack.map((s) => (
                         <span
                           key={s}
-                          className="font-mono uppercase tracking-wide text-[10px] text-ash group-hover:text-paper/50 border border-paper-shade group-hover:border-paper/20 rounded-full px-3 py-1 transition-colors duration-300"
+                          className="inline-flex items-center leading-none font-mono uppercase tracking-wide text-[10px] text-ash group-hover:text-paper/50 border border-paper-shade group-hover:border-paper/20 rounded-md px-2.5 py-1.5 transition-colors duration-300"
                         >
                           {s}
                         </span>

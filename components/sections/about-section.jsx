@@ -1,6 +1,7 @@
 import FadeIn from "../motion/fade-in"
 import AnimatedText from "../motion/animated-text"
 import CountUp from "../motion/count-up"
+import DrawBar from "../motion/draw-bar"
 import TiltPortrait from "../motion/tilt-portrait"
 import FloatIcon from "../motion/float-icon"
 import SectionTag from "../ui/section-tag"
@@ -10,7 +11,7 @@ const AboutSection = () => {
   return (
     <section
       id="studio"
-      className="relative z-10 px-6 sm:px-10 md:px-16 py-24 sm:py-32 md:py-40"
+      className="relative z-10 px-6 sm:px-10 md:px-16 py-20 sm:py-24 md:py-32"
     >
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={20}>
@@ -63,6 +64,7 @@ const AboutSection = () => {
                   value={stat.value}
                   className="font-display font-extrabold text-electric leading-none text-[clamp(2rem,5vw,3.5rem)]"
                 />
+                <DrawBar className="h-[3px] w-8 sm:w-10 bg-electric" delay={i * 0.08} />
                 <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
                   {stat.label}
                 </span>

@@ -6,7 +6,7 @@ import { TESTIMONIALS } from "../../lib/data"
 
 const TestimonialsSection = () => {
   return (
-    <section className="px-6 sm:px-10 md:px-16 pb-20 sm:pb-24 md:pb-32 relative z-10">
+    <section className="px-6 sm:px-10 md:px-16 py-20 sm:py-24 md:py-32 relative z-10">
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={20}>
           <SectionTag index="06" label="client word" />

@@ -5,7 +5,7 @@ import { TEAM } from "../../lib/data"
 
 const TeamSection = () => {
   return (
-    <section className="px-6 sm:px-10 md:px-16 pb-20 sm:pb-24 md:pb-28 relative z-10">
+    <section className="px-6 sm:px-10 md:px-16 py-20 sm:py-24 md:py-32 relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-8 md:gap-16 items-start">
           <div className="md:sticky md:top-24">
