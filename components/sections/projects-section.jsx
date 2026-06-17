@@ -49,6 +49,7 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
                 image={project.image}
                 video={project.video}
                 alt={`${project.client} — ${project.scope}`}
+                priority={index === 0}
                 sizes="(max-width: 1152px) 100vw, 1100px"
                 className="h-full w-full"
               />

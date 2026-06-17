@@ -16,6 +16,7 @@
   --color-ink: #17160f;
   --color-ash: #544e42;
   --color-electric: #e2521c;
+  --color-electric-ink: #9c3809;
 }
 
 @layer base {
@@ -25,6 +26,22 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  label[for],
+  summary {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .eyebrow,
+  .caret {
+    user-select: none;
   }
 }
 
@@ -97,7 +114,7 @@ body::after {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.7rem;
-  color: var(--color-electric);
+  color: var(--color-electric-ink);
 }
 
 .caret {

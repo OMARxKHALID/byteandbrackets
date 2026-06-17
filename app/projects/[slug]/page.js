@@ -41,7 +41,7 @@ const MetaItem = ({ label, children }) => (
 
 const Block = ({ label, children }) => (
   <FadeIn delay={0} y={20} className="flex flex-col gap-3">
-    <h2 className="font-mono uppercase tracking-widest text-electric text-[10px] sm:text-xs">
+    <h2 className="font-mono uppercase tracking-widest text-electric-ink text-[10px] sm:text-xs">
       // {label}
     </h2>
     <p className="text-ink/80 font-medium leading-relaxed max-w-3xl text-[clamp(1.05rem,1.8vw,1.4rem)]">
@@ -88,7 +88,7 @@ const ProjectPage = async ({ params }) => {
       <main id="main-content" className="relative z-10 [overflow-x:clip]">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded focus:bg-electric focus:text-paper focus:font-mono focus:text-sm"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded focus:bg-electric focus:text-ink focus:font-mono focus:text-sm"
         >
           Skip to main content
         </a>
@@ -144,7 +144,7 @@ const ProjectPage = async ({ params }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit the ${project.client} site`}
-                  className="group mt-8 sm:mt-10 inline-flex items-center gap-3 whitespace-nowrap rounded-full bg-ink text-paper font-mono uppercase tracking-wider px-7 py-3.5 sm:px-9 sm:py-4 min-h-[44px] text-xs sm:text-sm hover:bg-electric active:scale-95 touch-manipulation transition-[background-color,transform] duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+                  className="group mt-8 sm:mt-10 inline-flex items-center gap-3 whitespace-nowrap rounded-full bg-ink text-paper font-mono uppercase tracking-wider px-7 py-3.5 sm:px-9 sm:py-4 min-h-[44px] text-xs sm:text-sm hover:bg-electric hover:text-ink active:scale-95 touch-manipulation transition-[color,background-color,transform] duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
                 >
                   Visit site
                   <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200">↗</span>

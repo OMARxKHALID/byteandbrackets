@@ -21,7 +21,7 @@ const TestimonialsSection = () => {
           {TESTIMONIALS.map((item, i) => (
             <FadeIn key={item.company} delay={i * 0.08} y={20} className="bg-paper">
               <figure className="h-full flex flex-col gap-6 p-6 sm:p-8">
-                <span className="font-mono text-electric text-[10px] sm:text-xs tracking-widest">
+                <span className="font-mono text-electric-ink text-[10px] sm:text-xs tracking-widest">
                   // {item.tag}
                 </span>
                 <blockquote className="font-display font-semibold leading-snug tracking-tight text-ink text-[clamp(1.25rem,2.2vw,1.6rem)]">

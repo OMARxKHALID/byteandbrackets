@@ -34,10 +34,10 @@ const TeamSection = () => {
                     <Monogram name={person.name} className="w-12 h-12 sm:w-14 sm:h-14 text-sm mt-1" />
                     <div className="flex flex-col gap-2 flex-1 min-w-0">
                       <div className="flex items-baseline justify-between gap-4">
-                        <h3 className="font-display font-extrabold uppercase tracking-tight leading-none group-hover:text-electric transition-colors duration-300 text-[clamp(1.75rem,5vw,3rem)]">
+                        <h3 className="font-display font-extrabold uppercase tracking-tight leading-none group-hover:text-electric-ink transition-colors duration-300 text-[clamp(1.75rem,5vw,3rem)]">
                           {person.name}
                         </h3>
-                        <span className="font-mono uppercase tracking-widest text-electric text-[10px] sm:text-xs text-right flex-shrink-0">
+                        <span className="font-mono uppercase tracking-widest text-electric-ink text-[10px] sm:text-xs text-right flex-shrink-0">
                           {person.role}
                         </span>
                       </div>

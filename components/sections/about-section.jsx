@@ -42,7 +42,7 @@ const AboutSection = () => {
               <span className="font-display font-bold tracking-tight text-lg sm:text-xl">
                 {FOUNDER.name}
               </span>
-              <span className="font-mono uppercase tracking-widest text-electric text-[10px] sm:text-xs">
+              <span className="font-mono uppercase tracking-widest text-electric-ink text-[10px] sm:text-xs">
                 {FOUNDER.role}
               </span>
             </figcaption>
@@ -62,7 +62,7 @@ const AboutSection = () => {
                 />
                 <CountUp
                   value={stat.value}
-                  className="font-display font-extrabold text-electric leading-none text-[clamp(2rem,5vw,3.5rem)]"
+                  className="font-display font-extrabold text-electric-ink leading-none text-[clamp(2rem,5vw,3.5rem)]"
                 />
                 <DrawBar className="h-[3px] w-8 sm:w-10 bg-electric" delay={i * 0.08} />
                 <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">

@@ -27,7 +27,7 @@ const HeroSection = () => {
 
       <HeroZoom className="flex-1 flex flex-col items-center justify-center px-4 py-12">
         <FadeIn delay={0.1} y={20} className="mb-6 sm:mb-8">
-          <span className="eyebrow inline-flex items-center gap-2">
+          <span className="eyebrow inline-flex items-center gap-2 select-none">
             <TypedText text="Product engineering studio · est. 2019" />
             <span className="caret" aria-hidden="true" />
           </span>
@@ -39,7 +39,7 @@ const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.15} y={30} className="text-center">
-            <h1 className="font-display font-extrabold uppercase leading-[0.82] tracking-tight text-[clamp(3rem,10vw,8.5rem)]">
+            <h1 className="font-display font-extrabold uppercase leading-[0.82] tracking-tight text-[clamp(3rem,10vw,8.5rem)] select-none">
               Byte <span className="text-electric">&amp;</span>
               <br />
               Brackets

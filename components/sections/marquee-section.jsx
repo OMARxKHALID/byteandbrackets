@@ -37,7 +37,7 @@ const tripled = [...TICKER, ...TICKER, ...TICKER]
 
 const MarqueeSection = () => {
   return (
-    <section aria-hidden="true" className="bg-ink text-paper py-4 sm:py-5 overflow-hidden">
+    <section aria-hidden="true" className="bg-ink text-paper py-4 sm:py-5 overflow-hidden select-none">
       <div className="marquee-track flex w-max items-center gap-6 sm:gap-10 whitespace-nowrap will-change-transform">
         {tripled.map((item, i) => {
           const Icon = ICONS[item]
