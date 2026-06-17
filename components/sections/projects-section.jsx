@@ -4,6 +4,7 @@ import { useRef } from "react"
 import Link from "next/link"
 import { m, useScroll, useTransform, useReducedMotion } from "motion/react"
 import FadeIn from "../motion/fade-in"
+import ScrambleText from "../motion/scramble-text"
 import SectionTag from "../ui/section-tag"
 import { PROJECTS } from "../../lib/data"
 
@@ -14,17 +15,17 @@ const SpecPanel = ({ project }) => {
     <div className="h-full rounded-[16px] sm:rounded-[22px] bg-black/30 border border-paper/15 p-5 sm:p-7 flex flex-col justify-center font-mono text-[clamp(0.7rem,1.4vw,0.95rem)] leading-relaxed overflow-hidden">
       <span className="text-paper/30">{"{"}</span>
       <div className="pl-4 sm:pl-6 flex flex-col gap-1.5 py-1">
-        <span>
+        <FadeIn as="div" delay={0} y={6} duration={0.5}>
           <span className="text-electric">scope</span>
           <span className="text-paper/30">: </span>
           <span className="text-paper/80">&quot;{project.scope}&quot;</span>
-        </span>
-        <span>
+        </FadeIn>
+        <FadeIn as="div" delay={0.08} y={6} duration={0.5}>
           <span className="text-electric">year</span>
           <span className="text-paper/30">: </span>
           <span className="text-paper/80">{project.year}</span>
-        </span>
-        <span className="flex flex-wrap items-baseline">
+        </FadeIn>
+        <FadeIn as="div" delay={0.16} y={6} duration={0.5} className="flex flex-wrap items-baseline">
           <span className="text-electric">stack</span>
           <span className="text-paper/30">:&nbsp;[</span>
           {project.stack.map((s, i) => (
@@ -34,13 +35,14 @@ const SpecPanel = ({ project }) => {
             </span>
           ))}
           <span className="text-paper/30">]</span>
-        </span>
-        <span>
+        </FadeIn>
+        <FadeIn as="div" delay={0.24} y={6} duration={0.5}>
           <span className="text-electric">status</span>
           <span className="text-paper/30">: </span>
           <span className="text-paper/80">&quot;shipped&quot;</span>
           <span className="text-electric"> ✓</span>
-        </span>
+          <span className="caret ml-1.5" aria-hidden="true" />
+        </FadeIn>
       </div>
       <span className="text-paper/30">{"}"}</span>
     </div>
@@ -117,7 +119,7 @@ const ProjectsSection = () => {
         </FadeIn>
         <FadeIn delay={0.05} y={30}>
           <h2 className="font-display font-extrabold uppercase leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(2.5rem,9vw,7rem)]">
-            Things we shipped
+            <ScrambleText text="Things we shipped" />
           </h2>
         </FadeIn>
 

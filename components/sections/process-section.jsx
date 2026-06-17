@@ -1,4 +1,5 @@
 import FadeIn from "../motion/fade-in"
+import ScrambleText from "../motion/scramble-text"
 import SectionTag from "../ui/section-tag"
 import { PROCESS } from "../../lib/data"
 
@@ -13,7 +14,7 @@ const ProcessSection = () => {
             </FadeIn>
             <FadeIn delay={0.05} y={30}>
               <h2 className="font-display font-extrabold uppercase leading-[0.9] tracking-tight mt-6 sm:mt-8 max-w-2xl text-[clamp(2.5rem,8vw,6rem)]">
-                Brief to production in five moves
+                <ScrambleText text="Brief to production in five moves" />
               </h2>
             </FadeIn>
           </div>

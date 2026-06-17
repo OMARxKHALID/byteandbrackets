@@ -1,5 +1,6 @@
 import FadeIn from "../motion/fade-in"
 import SectionTag from "../ui/section-tag"
+import Monogram from "../ui/monogram"
 import { TEAM } from "../../lib/data"
 
 const TeamSection = () => {
@@ -29,18 +30,21 @@ const TeamSection = () => {
             {TEAM.map((person, i) => (
               <li key={person.name} className="border-b border-paper-shade">
                 <FadeIn delay={i * 0.06} y={20}>
-                  <div className="group py-6 sm:py-8 flex flex-col gap-2">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-display font-extrabold uppercase tracking-tight leading-none group-hover:text-electric transition-colors duration-300 text-[clamp(1.75rem,5vw,3rem)]">
-                        {person.name}
-                      </h3>
-                      <span className="font-mono uppercase tracking-widest text-electric text-[10px] sm:text-xs text-right flex-shrink-0">
-                        {person.role}
-                      </span>
+                  <div className="group py-6 sm:py-8 flex items-start gap-4 sm:gap-5">
+                    <Monogram name={person.name} className="w-12 h-12 sm:w-14 sm:h-14 text-sm mt-1" />
+                    <div className="flex flex-col gap-2 flex-1 min-w-0">
+                      <div className="flex items-baseline justify-between gap-4">
+                        <h3 className="font-display font-extrabold uppercase tracking-tight leading-none group-hover:text-electric transition-colors duration-300 text-[clamp(1.75rem,5vw,3rem)]">
+                          {person.name}
+                        </h3>
+                        <span className="font-mono uppercase tracking-widest text-electric text-[10px] sm:text-xs text-right flex-shrink-0">
+                          {person.role}
+                        </span>
+                      </div>
+                      <p className="text-ash font-medium text-sm sm:text-base leading-relaxed max-w-md">
+                        {person.note}
+                      </p>
                     </div>
-                    <p className="text-ash font-medium text-sm sm:text-base leading-relaxed max-w-md">
-                      {person.note}
-                    </p>
                   </div>
                 </FadeIn>
               </li>

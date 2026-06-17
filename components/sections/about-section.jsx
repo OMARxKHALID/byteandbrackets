@@ -1,6 +1,7 @@
 import Image from "next/image"
 import FadeIn from "../motion/fade-in"
 import AnimatedText from "../motion/animated-text"
+import CountUp from "../motion/count-up"
 import SectionTag from "../ui/section-tag"
 import { STUDIO_HEADLINE, STUDIO_TEXT, STATS, FOUNDER } from "../../lib/data"
 
@@ -58,9 +59,10 @@ const AboutSection = () => {
                   height={467}
                   className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
                 />
-                <span className="font-display font-extrabold text-electric leading-none text-[clamp(2rem,5vw,3.5rem)]">
-                  {stat.value}
-                </span>
+                <CountUp
+                  value={stat.value}
+                  className="font-display font-extrabold text-electric leading-none text-[clamp(2rem,5vw,3.5rem)]"
+                />
                 <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
                   {stat.label}
                 </span>

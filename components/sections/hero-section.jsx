@@ -1,4 +1,5 @@
 import FadeIn from "../motion/fade-in"
+import TypedText from "../motion/typed-text"
 import ContactButton from "../ui/contact-button"
 import MobileNav from "../ui/mobile-nav"
 import DesktopNav from "../ui/desktop-nav"
@@ -25,7 +26,7 @@ const HeroSection = () => {
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
         <FadeIn delay={0.1} y={20} className="mb-6 sm:mb-8">
           <span className="eyebrow inline-flex items-center gap-2">
-            Product engineering studio · est. 2019
+            <TypedText text="Product engineering studio · est. 2019" />
             <span className="caret" aria-hidden="true" />
           </span>
         </FadeIn>
