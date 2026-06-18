@@ -53,7 +53,7 @@ const MarqueeSection = () => {
                 {Icon && (
                   <Icon className="text-lime-100/70 text-[clamp(1rem,2vw,1.5rem)] flex-shrink-0" />
                 )}
-                <span className="font-display font-semibold uppercase tracking-tight text-[clamp(1.1rem,2.6vw,1.9rem)]">
+                <span className="font-display uppercase tracking-tight text-[clamp(1.1rem,2.6vw,1.9rem)]">
                   {item}
                 </span>
               </span>

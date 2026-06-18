@@ -19,7 +19,7 @@ const AboutSection = () => {
         </FadeIn>
 
         <FadeIn delay={0.05} y={30}>
-          <h2 className="font-display font-extrabold leading-[0.95] tracking-tight mt-6 sm:mt-8 max-w-4xl text-[clamp(2rem,6vw,4.5rem)]">
+          <h2 className="font-display leading-[0.95] tracking-tight mt-6 sm:mt-8 max-w-4xl text-[clamp(2rem,6vw,4.5rem)]">
             {STUDIO_HEADLINE}
           </h2>
         </FadeIn>
@@ -39,7 +39,7 @@ const AboutSection = () => {
               className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-lime-100/15"
             />
             <figcaption className="flex flex-col gap-1">
-              <span className="font-display font-bold tracking-tight text-lg sm:text-xl">
+              <span className="font-display tracking-tight text-lg sm:text-xl">
                 {FOUNDER.name}
               </span>
               <span className="font-mono uppercase tracking-widest text-lime-400 text-xs">
@@ -62,7 +62,7 @@ const AboutSection = () => {
                 />
                 <CountUp
                   value={stat.value}
-                  className="font-display font-extrabold text-lime-400 leading-none text-[clamp(2rem,5vw,3.5rem)]"
+                  className="font-display text-lime-400 leading-none text-[clamp(2rem,5vw,3.5rem)]"
                 />
                 <DrawBar className="h-[3px] w-8 sm:w-10 bg-lime-400" delay={i * 0.08} />
                 <span className="font-mono uppercase tracking-widest text-lime-100/70 text-xs">

@@ -13,7 +13,7 @@ const ProcessSection = () => {
               <SectionTag label="how we work" />
             </FadeIn>
             <FadeIn delay={0.05} y={30}>
-              <h2 className="font-display font-extrabold leading-[0.9] tracking-tight mt-6 sm:mt-8 max-w-2xl text-[clamp(2.5rem,8vw,6rem)]">
+              <h2 className="font-display leading-[0.9] tracking-tight mt-6 sm:mt-8 max-w-2xl text-[clamp(2.5rem,8vw,6rem)]">
                 Brief to production in five moves
               </h2>
             </FadeIn>
@@ -38,7 +38,7 @@ const ProcessSection = () => {
                       STEP {step.number}
                     </span>
                   </div>
-                  <h3 className="font-display font-bold tracking-tight leading-none text-[clamp(1.25rem,2.4vw,1.7rem)]">
+                  <h3 className="font-display tracking-tight leading-none text-[clamp(1.25rem,2.4vw,1.7rem)]">
                     {step.name}
                   </h3>
                   <p className="text-lime-100/70 font-medium leading-relaxed text-sm">

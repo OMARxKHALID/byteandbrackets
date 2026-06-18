@@ -21,7 +21,7 @@ const ServicesAccordion = ({ services }) => {
                 className="group w-full text-left flex items-center justify-between gap-6 py-7 sm:py-9 min-h-[44px] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-sm"
               >
                 <h3
-                  className={`font-display font-bold tracking-tight leading-none text-[clamp(1.75rem,5vw,3.5rem)] transition-colors duration-300 ${isOpen ? "text-lime-400" : "group-hover:text-lime-400"}`}
+                  className={`font-display tracking-tight leading-none text-[clamp(1.75rem,5vw,3.5rem)] transition-colors duration-300 ${isOpen ? "text-lime-400" : "group-hover:text-lime-400"}`}
                 >
                   {service.name}
                 </h3>

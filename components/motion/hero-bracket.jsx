@@ -28,7 +28,7 @@ const HeroBracket = ({ char, side }) => {
   }, [shouldReduce, side, px, py])
 
   const className =
-    "inline-block font-display font-extrabold leading-none text-lime-400 text-[clamp(5rem,18vw,17rem)] select-none"
+    "inline-block font-display leading-none text-lime-400 text-[clamp(5rem,18vw,17rem)] select-none"
 
   if (shouldReduce) {
     return (

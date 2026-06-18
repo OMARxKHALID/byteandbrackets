@@ -1,4 +1,4 @@
-import { Bricolage_Grotesque, Hanken_Grotesk, JetBrains_Mono } from "next/font/google"
+import { Saira_Stencil_One, Hanken_Grotesk, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import MotionProvider from "../components/motion/motion-provider"
 import ScrollProgress from "../components/motion/scroll-progress"
@@ -22,9 +22,9 @@ const siteLd = [
   },
 ]
 
-const display = Bricolage_Grotesque({
+const display = Saira_Stencil_One({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400"],
   variable: "--font-display",
   display: "swap",
 })

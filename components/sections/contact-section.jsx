@@ -1,5 +1,6 @@
 import FadeIn from "../motion/fade-in"
 import ScrollScale from "../motion/scroll-scale"
+import FloatIcon from "../motion/float-icon"
 import SectionTag from "../ui/section-tag"
 import { CONTACT_EMAIL, LOCATION, AVAILABILITY, SOCIALS } from "../../lib/data"
 
@@ -14,19 +15,28 @@ const ContactSection = () => {
           <SectionTag label="start here" />
         </FadeIn>
 
-        <ScrollScale>
-          <h2 className="font-display font-extrabold leading-[0.85] tracking-tight text-[clamp(2.5rem,11vw,9rem)]">
-            <span className="text-lime-400">[</span> Let&apos;s
-            <br />
-            build it <span className="text-lime-400">]</span>
-          </h2>
-        </ScrollScale>
+        <div className="flex items-center justify-between gap-8">
+          <ScrollScale>
+            <h2 className="font-display leading-[1.05] tracking-tight text-[clamp(2.5rem,11vw,9rem)]">
+              <span className="text-lime-400">[</span> Let&apos;s
+              <br />
+              build it <span className="text-lime-400">]</span>
+            </h2>
+          </ScrollScale>
+
+          <FloatIcon
+            src="/mascot.webp"
+            width={1024}
+            height={1024}
+            className="hidden lg:block w-[clamp(160px,18vw,300px)] h-auto select-none"
+          />
+        </div>
 
         <FadeIn delay={0.1} y={20}>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
             aria-label={`Email ${CONTACT_EMAIL}`}
-            className="group inline-flex items-center gap-4 font-display font-bold tracking-tight leading-none text-[clamp(1.1rem,4vw,3rem)] min-h-[44px] touch-manipulation hover:text-lime-400 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-sm"
+            className="group inline-flex items-center gap-4 font-display tracking-tight leading-none text-[clamp(1.1rem,4vw,3rem)] min-h-[44px] touch-manipulation hover:text-lime-400 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-sm"
           >
             {CONTACT_EMAIL}
             <span className="text-lime-400 group-hover:translate-x-1 transition-transform duration-300 text-[clamp(0.8rem,2vw,2rem)]">

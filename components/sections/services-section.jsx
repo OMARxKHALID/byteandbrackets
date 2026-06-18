@@ -14,7 +14,7 @@ const ServicesSection = () => {
           <SectionTag label="capabilities" />
         </FadeIn>
         <FadeIn delay={0.05} y={30}>
-          <h2 className="font-display font-extrabold leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(2.5rem,9vw,7rem)]">
+          <h2 className="font-display leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(2.5rem,9vw,7rem)]">
             What we build
           </h2>
         </FadeIn>

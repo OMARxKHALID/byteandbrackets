@@ -13,7 +13,7 @@ const TeamSection = () => {
               <SectionTag label="the people" />
             </FadeIn>
             <FadeIn delay={0.05} y={30}>
-              <h2 className="font-display font-extrabold leading-[0.9] tracking-tight mt-6 sm:mt-8 text-[clamp(2.5rem,7vw,5rem)]">
+              <h2 className="font-display leading-[0.9] tracking-tight mt-6 sm:mt-8 text-[clamp(2.5rem,7vw,5rem)]">
                 A small
                 <br />
                 senior team
@@ -34,7 +34,7 @@ const TeamSection = () => {
                     <Monogram name={person.name} className="w-12 h-12 sm:w-14 sm:h-14 text-sm mt-1" />
                     <div className="flex flex-col gap-2 flex-1 min-w-0">
                       <div className="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                        <h3 className="min-w-0 font-display font-extrabold tracking-tight leading-none group-hover:text-lime-400 transition-colors duration-300 text-[clamp(1.5rem,4vw,3rem)]">
+                        <h3 className="min-w-0 font-display tracking-tight leading-none group-hover:text-lime-400 transition-colors duration-300 text-[clamp(1.5rem,4vw,3rem)]">
                           {person.name}
                         </h3>
                         <span className="font-mono uppercase tracking-widest text-lime-400 text-xs sm:text-right sm:flex-shrink-0">

@@ -34,7 +34,7 @@ const MetaItem = ({ label, children }) => (
     <span className="font-mono uppercase tracking-widest text-lime-100/70 text-xs">
       {label}
     </span>
-    <span className="font-display font-bold tracking-tight text-sm sm:text-base">
+    <span className="font-display tracking-tight text-sm sm:text-base">
       {children}
     </span>
   </div>
@@ -108,7 +108,7 @@ const ProjectPage = async ({ params }) => {
               <Link
                 href="/"
                 aria-label="Byte & Brackets home"
-                className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
+                className="font-display text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
               >
                 {BRAND_SHORT}
                 <span className="text-lime-400">.</span>
@@ -123,7 +123,7 @@ const ProjectPage = async ({ params }) => {
               <SectionTag label={`${project.number} — ${project.scope} · ${project.year}`} />
             </FadeIn>
             <FadeIn delay={0.05} y={30}>
-              <h1 className="font-display font-extrabold leading-[0.9] tracking-tight mt-6 sm:mt-8 text-[clamp(3rem,12vw,8.5rem)]">
+              <h1 className="font-display leading-[0.9] tracking-tight mt-6 sm:mt-8 text-[clamp(3rem,12vw,8.5rem)]">
                 {project.client}
               </h1>
             </FadeIn>
@@ -191,7 +191,7 @@ const ProjectPage = async ({ params }) => {
               <span className="font-mono uppercase tracking-widest text-lime-100/70 text-xs">
                 Next project
               </span>
-              <span className="flex items-center gap-4 font-display font-extrabold tracking-tight leading-none text-lime-100 group-hover:text-lime-400 transition-colors duration-300 text-[clamp(1.75rem,6vw,4rem)]">
+              <span className="flex items-center gap-4 font-display tracking-tight leading-none text-lime-100 group-hover:text-lime-400 transition-colors duration-300 text-[clamp(1.75rem,6vw,4rem)]">
                 {next.client}
                 <span className="text-lime-400 group-hover:translate-x-1 transition-transform duration-300">→</span>
               </span>

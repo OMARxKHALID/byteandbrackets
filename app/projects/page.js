@@ -38,7 +38,7 @@ const ProjectsPage = () => {
               <Link
                 href="/"
                 aria-label="Byte & Brackets home"
-                className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
+                className="font-display text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
               >
                 {BRAND_SHORT}
                 <span className="text-lime-400">.</span>
@@ -53,7 +53,7 @@ const ProjectsPage = () => {
               <SectionTag label={`${PROJECTS.length} projects`} />
             </FadeIn>
             <FadeIn delay={0.05} y={30}>
-              <h1 className="font-display font-extrabold leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(3rem,12vw,9rem)]">
+              <h1 className="font-display leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(3rem,12vw,9rem)]">
                 Projects
               </h1>
             </FadeIn>
@@ -81,7 +81,7 @@ const ProjectsPage = () => {
                         ↗
                       </span>
                     </div>
-                    <h2 className="font-display font-extrabold tracking-tight leading-none mt-2 text-lime-100 group-hover:text-lime-400 transition-colors duration-300 text-[clamp(2rem,5vw,3.25rem)]">
+                    <h2 className="font-display tracking-tight leading-none mt-2 text-lime-100 group-hover:text-lime-400 transition-colors duration-300 text-[clamp(2rem,5vw,3.25rem)]">
                       {project.client}
                     </h2>
                     <p className="text-lime-100/70 group-hover:text-lime-100 font-medium leading-relaxed transition-colors duration-300 text-sm sm:text-base">

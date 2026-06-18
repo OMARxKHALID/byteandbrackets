@@ -15,7 +15,7 @@ const HeroSection = () => {
           <a
             href="#main-content"
             aria-label="Byte & Brackets home"
-            className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
+            className="font-display text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
           >
             {BRAND_SHORT}
             <span className="text-lime-400">.</span>
@@ -39,7 +39,7 @@ const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.15} y={30} className="text-center">
-            <h1 className="font-display font-extrabold leading-[0.82] tracking-tight text-[clamp(3rem,10vw,8.5rem)] select-none">
+            <h1 className="font-display leading-[0.82] tracking-tight text-[clamp(3rem,10vw,8.5rem)] select-none">
               Byte <span className="text-lime-400">&amp;</span>
               <br />
               Brackets
