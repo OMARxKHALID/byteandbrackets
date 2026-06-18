@@ -11,7 +11,7 @@ const ScrollProgress = () => {
     <m.div
       aria-hidden="true"
       style={{ scaleX: shouldReduce ? scrollYProgress : smooth }}
-      className="fixed top-0 left-0 right-0 z-40 h-1 bg-electric origin-left pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-40 h-1 bg-lime-400 origin-left pointer-events-none"
     />
   )
 }

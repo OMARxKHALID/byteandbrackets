@@ -37,7 +37,7 @@ const ProjectMedia = ({
       onMouseLeave={handleLeave}
       onFocus={handleEnter}
       onBlur={handleLeave}
-      className={`relative overflow-hidden bg-ink/40 ${className}`}
+      className={`relative overflow-hidden bg-neutral-950/40 ${className}`}
     >
       <Image
         src={image}

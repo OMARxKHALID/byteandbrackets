@@ -10,7 +10,7 @@ const Monogram = ({ name, className = "" }) => {
   return (
     <span
       aria-hidden="true"
-      className={`flex-shrink-0 inline-flex items-center justify-center rounded-xl border border-ink/15 bg-paper-shade/50 font-mono font-bold tracking-tight text-ink ${className}`}
+      className={`flex-shrink-0 inline-flex items-center justify-center rounded-xl border border-lime-100/15 bg-lime-100/10 font-mono font-bold tracking-tight text-lime-100 ${className}`}
     >
       {initials}
     </span>

@@ -12,11 +12,20 @@ const FadeIn = ({
   as = "div",
 }) => {
   const shouldReduce = useReducedMotion()
-  const Tag = as
   const Component = m[as] || m.div
 
   if (shouldReduce) {
-    return <Tag className={className}>{children}</Tag>
+    return (
+      <Component
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "50px", amount: 0 }}
+        transition={{ delay, duration: 0.5, ease: "easeOut" }}
+        className={className}
+      >
+        {children}
+      </Component>
+    )
   }
 
   return (

@@ -15,7 +15,7 @@ const AboutSection = () => {
     >
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={20}>
-          <SectionTag index="04" label="studio" />
+          <SectionTag label="studio" />
         </FadeIn>
 
         <FadeIn delay={0.05} y={30}>
@@ -26,7 +26,7 @@ const AboutSection = () => {
 
         <AnimatedText
           text={STUDIO_TEXT}
-          className="text-ink/80 font-medium leading-relaxed mt-8 sm:mt-10 max-w-3xl text-[clamp(1.05rem,2vw,1.5rem)]"
+          className="text-lime-100/70 font-medium leading-relaxed mt-8 sm:mt-10 max-w-3xl text-[clamp(1.05rem,2vw,1.5rem)]"
         />
 
         <FadeIn delay={0.1} y={20}>
@@ -36,22 +36,22 @@ const AboutSection = () => {
               alt={FOUNDER.name}
               width={620}
               height={671}
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-paper-shade"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-lime-100/15"
             />
             <figcaption className="flex flex-col gap-1">
               <span className="font-display font-bold tracking-tight text-lg sm:text-xl">
                 {FOUNDER.name}
               </span>
-              <span className="font-mono uppercase tracking-widest text-electric-ink text-[10px] sm:text-xs">
+              <span className="font-mono uppercase tracking-widest text-lime-400 text-xs">
                 {FOUNDER.role}
               </span>
             </figcaption>
           </figure>
         </FadeIn>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-paper-shade mt-16 sm:mt-20 border border-paper-shade">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-lime-100/10 mt-16 sm:mt-20 border border-lime-100/10">
           {STATS.map((stat, i) => (
-            <FadeIn key={stat.label} delay={i * 0.08} y={20} className="bg-paper">
+            <FadeIn key={stat.label} delay={i * 0.08} y={20} className="bg-neutral-950">
               <div className="p-6 sm:p-8 flex flex-col gap-3">
                 <FloatIcon
                   src={stat.icon}
@@ -62,10 +62,10 @@ const AboutSection = () => {
                 />
                 <CountUp
                   value={stat.value}
-                  className="font-display font-extrabold text-electric-ink leading-none text-[clamp(2rem,5vw,3.5rem)]"
+                  className="font-display font-extrabold text-lime-400 leading-none text-[clamp(2rem,5vw,3.5rem)]"
                 />
-                <DrawBar className="h-[3px] w-8 sm:w-10 bg-electric" delay={i * 0.08} />
-                <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
+                <DrawBar className="h-[3px] w-8 sm:w-10 bg-lime-400" delay={i * 0.08} />
+                <span className="font-mono uppercase tracking-widest text-lime-100/70 text-xs">
                   {stat.label}
                 </span>
               </div>

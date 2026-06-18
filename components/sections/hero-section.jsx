@@ -18,7 +18,7 @@ const HeroSection = () => {
             className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
           >
             {BRAND_SHORT}
-            <span className="text-electric">.</span>
+            <span className="text-lime-400">.</span>
           </a>
           <DesktopNav />
           <MobileNav />
@@ -39,8 +39,8 @@ const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.15} y={30} className="text-center">
-            <h1 className="font-display font-extrabold uppercase leading-[0.82] tracking-tight text-[clamp(3rem,10vw,8.5rem)] select-none">
-              Byte <span className="text-electric">&amp;</span>
+            <h1 className="font-display font-extrabold leading-[0.82] tracking-tight text-[clamp(3rem,10vw,8.5rem)] select-none">
+              Byte <span className="text-lime-400">&amp;</span>
               <br />
               Brackets
             </h1>
@@ -54,13 +54,13 @@ const HeroSection = () => {
 
       <div className="w-full flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between pt-6 pb-10 sm:pb-12 px-6 sm:px-10 md:px-16">
         <FadeIn delay={0.4} y={20}>
-          <p className="text-ash font-medium leading-snug max-w-[420px] text-[clamp(0.95rem,1.3vw,1.2rem)]">
+          <p className="text-lime-100/70 font-medium leading-snug max-w-[420px] text-[clamp(1rem,1.3vw,1.2rem)]">
             {HERO_THESIS}
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20} className="flex flex-col items-start sm:items-end gap-4">
-          <span className="flex items-center gap-2 font-mono uppercase tracking-widest text-[10px] sm:text-xs text-ash">
-            <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse flex-shrink-0" />
+          <span className="flex items-center gap-2 font-mono uppercase tracking-widest text-xs text-lime-100/70">
+            <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse flex-shrink-0" />
             {AVAILABILITY}
           </span>
           <ContactButton />

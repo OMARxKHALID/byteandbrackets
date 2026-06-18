@@ -17,26 +17,26 @@ const ProjectCard = ({ project, index, totalCards, range, progress }) => {
   const targetScale = 1 - (totalCards - 1 - index) * 0.03
   const scale = useTransform(progress, range, [1, targetScale])
 
-  const cardBase = "w-full rounded-[28px] sm:rounded-[40px] md:rounded-[56px] bg-ink text-paper origin-top overflow-hidden flex flex-col"
+  const cardBase = "w-full rounded-[28px] sm:rounded-[40px] md:rounded-[56px] bg-neutral-950 text-lime-100 origin-top overflow-hidden flex flex-col"
 
   return (
     <Link
       href={`/projects/${project.slug}`}
       aria-label={`${project.client} project`}
       style={shouldReduce ? undefined : { top: `${5 + index * 1.5}rem` }}
-      className={`group block rounded-[28px] sm:rounded-[40px] md:rounded-[56px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper ${shouldReduce ? "" : "sticky"}`}
+      className={`group block rounded-[28px] sm:rounded-[40px] md:rounded-[56px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${shouldReduce ? "" : "sticky"}`}
     >
       <m.div className={cardBase} style={shouldReduce ? {} : { scale }}>
         <div className="shrink-0 flex items-end justify-between gap-4 p-5 sm:p-6 md:p-7">
           <div className="flex flex-col gap-1.5">
-            <span className="font-mono uppercase tracking-widest text-paper/60 text-[10px] sm:text-xs">
+            <span className="font-mono uppercase tracking-widest text-lime-100/70 text-xs">
               [{project.number}] — {project.scope} · {project.year}
             </span>
-            <h3 className="font-display font-extrabold uppercase tracking-tight leading-none text-[clamp(1.5rem,3.5vw,2.75rem)]">
+            <h3 className="font-display font-extrabold tracking-tight leading-none text-[clamp(1.5rem,3.5vw,2.75rem)]">
               {project.client}
             </h3>
           </div>
-          <span className="flex-shrink-0 flex items-center gap-2 font-mono uppercase tracking-wider text-paper/60 group-hover:text-electric text-[10px] sm:text-xs whitespace-nowrap transition-colors duration-200">
+          <span className="flex-shrink-0 flex items-center gap-2 font-mono uppercase tracking-wider text-lime-100/70 group-hover:text-lime-400 text-xs whitespace-nowrap transition-colors duration-200">
             <span className="hidden sm:inline">View project</span>
             <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200">→</span>
           </span>
@@ -78,10 +78,10 @@ const ProjectsSection = () => {
     >
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={20}>
-          <SectionTag index="01" label="selected projects" />
+          <SectionTag label="selected projects" />
         </FadeIn>
         <FadeIn delay={0.05} y={30}>
-          <h2 className="font-display font-extrabold uppercase leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(2.5rem,9vw,7rem)]">
+          <h2 className="font-display font-extrabold leading-[0.9] tracking-tight mt-6 sm:mt-8 mb-12 sm:mb-16 text-[clamp(2.5rem,9vw,7rem)]">
             <ScrambleText text="Things we shipped" />
           </h2>
         </FadeIn>
@@ -106,7 +106,7 @@ const ProjectsSection = () => {
           <Link
             href="/projects"
             aria-label="View all work"
-            className="group inline-flex items-center gap-3 whitespace-nowrap rounded-full border border-ink/40 text-ink font-mono uppercase tracking-wider px-8 py-4 min-h-[44px] text-xs sm:text-sm hover:bg-ink hover:text-paper hover:border-ink hover:-translate-y-0.5 active:translate-y-0 active:scale-95 touch-manipulation transition-[color,background-color,border-color,transform] duration-200 ease-out cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+            className="group inline-flex items-center gap-3 whitespace-nowrap rounded-full border border-lime-100/30 text-lime-100 font-mono uppercase tracking-wider px-8 py-4 min-h-[44px] text-xs sm:text-sm hover:bg-lime-100 hover:text-neutral-950 hover:border-lime-100 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 touch-manipulation transition-[color,background-color,border-color,transform] duration-200 ease-out cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
           >
             View all work
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>

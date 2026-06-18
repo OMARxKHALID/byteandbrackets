@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import FadeIn from "../../../components/motion/fade-in"
 import FooterSection from "../../../components/sections/footer-section"
 import ProjectMedia from "../../../components/ui/project-media"
+import SectionTag from "../../../components/ui/section-tag"
 import { PROJECTS, BRAND_SHORT, SITE_URL } from "../../../lib/data"
 
 const getProject = (slug) => PROJECTS.find((p) => p.slug === slug)
@@ -29,8 +30,8 @@ export const generateMetadata = async ({ params }) => {
 }
 
 const MetaItem = ({ label, children }) => (
-  <div className="bg-paper p-5 sm:p-6 flex flex-col gap-2">
-    <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
+  <div className="bg-neutral-950 p-5 sm:p-6 flex flex-col gap-2">
+    <span className="font-mono uppercase tracking-widest text-lime-100/70 text-xs">
       {label}
     </span>
     <span className="font-display font-bold tracking-tight text-sm sm:text-base">
@@ -41,10 +42,10 @@ const MetaItem = ({ label, children }) => (
 
 const Block = ({ label, children }) => (
   <FadeIn delay={0} y={20} className="flex flex-col gap-3">
-    <h2 className="font-mono uppercase tracking-widest text-electric-ink text-[10px] sm:text-xs">
+    <h2 className="font-mono uppercase tracking-widest text-lime-400 text-xs">
       // {label}
     </h2>
-    <p className="text-ink/80 font-medium leading-relaxed max-w-3xl text-[clamp(1.05rem,1.8vw,1.4rem)]">
+    <p className="text-lime-100/70 font-medium leading-relaxed max-w-3xl text-[clamp(1.05rem,1.8vw,1.4rem)]">
       {children}
     </p>
   </FadeIn>
@@ -88,7 +89,7 @@ const ProjectPage = async ({ params }) => {
       <main id="main-content" className="relative z-10 [overflow-x:clip]">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded focus:bg-electric focus:text-ink focus:font-mono focus:text-sm"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded focus:bg-lime-400 focus:text-neutral-950 focus:font-mono focus:text-sm"
         >
           Skip to main content
         </a>
@@ -99,7 +100,7 @@ const ProjectPage = async ({ params }) => {
               <Link
                 href="/projects"
                 aria-label="Back to all projects"
-                className="group inline-flex items-center gap-2 py-3 min-h-[44px] touch-manipulation font-mono uppercase tracking-wide text-xs sm:text-sm text-ash hover:text-electric transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
+                className="group inline-flex items-center gap-2 py-3 min-h-[44px] touch-manipulation font-mono uppercase tracking-wide text-xs sm:text-sm text-lime-100/70 hover:text-lime-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-sm"
               >
                 <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span>
                 All projects
@@ -110,7 +111,7 @@ const ProjectPage = async ({ params }) => {
                 className="font-display font-extrabold text-lg sm:text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation"
               >
                 {BRAND_SHORT}
-                <span className="text-electric">.</span>
+                <span className="text-lime-400">.</span>
               </Link>
             </nav>
           </FadeIn>
@@ -119,21 +120,15 @@ const ProjectPage = async ({ params }) => {
         <section className="px-6 sm:px-10 md:px-16 pt-12 sm:pt-16 md:pt-20">
           <div className="max-w-6xl mx-auto">
             <FadeIn delay={0} y={20}>
-              <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
-                <span className="text-electric">[</span>
-                {project.number}
-                <span className="opacity-50"> — </span>
-                {project.scope} · {project.year}
-                <span className="text-electric">]</span>
-              </span>
+              <SectionTag label={`${project.number} — ${project.scope} · ${project.year}`} />
             </FadeIn>
             <FadeIn delay={0.05} y={30}>
-              <h1 className="font-display font-extrabold uppercase leading-[0.9] tracking-tight mt-6 sm:mt-8 text-[clamp(3rem,12vw,8.5rem)]">
+              <h1 className="font-display font-extrabold leading-[0.9] tracking-tight mt-6 sm:mt-8 text-[clamp(3rem,12vw,8.5rem)]">
                 {project.client}
               </h1>
             </FadeIn>
             <FadeIn delay={0.1} y={20}>
-              <p className="text-ash font-medium leading-relaxed mt-6 sm:mt-8 max-w-3xl text-[clamp(1.1rem,2vw,1.5rem)]">
+              <p className="text-lime-100/70 font-medium leading-relaxed mt-6 sm:mt-8 max-w-3xl text-[clamp(1.1rem,2vw,1.5rem)]">
                 {project.outcome}
               </p>
             </FadeIn>
@@ -144,7 +139,7 @@ const ProjectPage = async ({ params }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit the ${project.client} site`}
-                  className="group mt-8 sm:mt-10 inline-flex items-center gap-3 whitespace-nowrap rounded-full bg-ink text-paper font-mono uppercase tracking-wider px-7 py-3.5 sm:px-9 sm:py-4 min-h-[44px] text-xs sm:text-sm hover:bg-electric hover:text-ink active:scale-95 touch-manipulation transition-[color,background-color,transform] duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+                  className="group mt-8 sm:mt-10 inline-flex items-center gap-3 whitespace-nowrap rounded-full border border-lime-100/30 text-lime-100 font-mono uppercase tracking-wider px-7 py-3.5 sm:px-9 sm:py-4 min-h-[44px] text-xs sm:text-sm hover:bg-lime-400 hover:text-neutral-950 hover:border-lime-400 active:scale-95 touch-manipulation transition-[color,background-color,border-color,transform] duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
                 >
                   Visit site
                   <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200">↗</span>
@@ -163,14 +158,14 @@ const ProjectPage = async ({ params }) => {
                 alt={`${project.client} — ${project.scope}`}
                 priority
                 sizes="(max-width: 1152px) 100vw, 1152px"
-                className="aspect-[16/9] w-full rounded-[20px] sm:rounded-[28px] md:rounded-[36px] border border-paper-shade"
+                className="aspect-[16/9] w-full rounded-[20px] sm:rounded-[28px] md:rounded-[36px] border border-lime-100/15"
               />
             </FadeIn>
           </div>
         </section>
 
         <section className="px-6 sm:px-10 md:px-16 pt-12 sm:pt-16">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-paper-shade border border-paper-shade">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-lime-100/10 border border-lime-100/10">
             <MetaItem label="Year">{project.year}</MetaItem>
             <MetaItem label="Timeline">{project.duration}</MetaItem>
             <MetaItem label="Services">{project.services.join(", ")}</MetaItem>
@@ -187,18 +182,18 @@ const ProjectPage = async ({ params }) => {
         </section>
 
         <section className="px-6 sm:px-10 md:px-16 pb-20 sm:pb-24 md:pb-28">
-          <div className="max-w-6xl mx-auto border-t border-paper-shade pt-8 sm:pt-10">
+          <div className="max-w-6xl mx-auto border-t border-lime-100/15 pt-8 sm:pt-10">
             <Link
               href={`/projects/${next.slug}`}
               aria-label={`Next project: ${next.client}`}
-              className="group flex items-center justify-between gap-6 py-2 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm"
+              className="group flex items-center justify-between gap-6 py-2 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-sm"
             >
-              <span className="font-mono uppercase tracking-widest text-ash text-[10px] sm:text-xs">
+              <span className="font-mono uppercase tracking-widest text-lime-100/70 text-xs">
                 Next project
               </span>
-              <span className="flex items-center gap-4 font-display font-extrabold uppercase tracking-tight leading-none text-ink group-hover:text-electric transition-colors duration-300 text-[clamp(1.75rem,6vw,4rem)]">
+              <span className="flex items-center gap-4 font-display font-extrabold tracking-tight leading-none text-lime-100 group-hover:text-lime-400 transition-colors duration-300 text-[clamp(1.75rem,6vw,4rem)]">
                 {next.client}
-                <span className="text-electric group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <span className="text-lime-400 group-hover:translate-x-1 transition-transform duration-300">→</span>
               </span>
             </Link>
           </div>

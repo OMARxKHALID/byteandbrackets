@@ -1,13 +1,9 @@
-const SectionTag = ({ index, label, dark = false }) => {
+const SectionTag = ({ label }) => {
   return (
-    <span
-      className={`font-mono uppercase tracking-[0.18em] text-[10px] sm:text-xs inline-flex items-center gap-2 select-none ${dark ? "text-paper/60" : "text-ash"}`}
-    >
-      <span className="text-electric">[</span>
-      {index}
-      <span className="opacity-50">—</span>
+    <span className="font-mono uppercase tracking-[0.18em] text-xs inline-flex items-center gap-2 select-none text-lime-100/70">
+      <span className="text-lime-400">[</span>
       {label}
-      <span className="text-electric">]</span>
+      <span className="text-lime-400">]</span>
     </span>
   )
 }

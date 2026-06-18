@@ -30,22 +30,22 @@ const MobileNav = () => {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="relative z-[60] flex flex-col justify-center gap-[5px] w-11 h-11 -mr-2 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 rounded-sm"
+        className="relative z-[60] flex flex-col justify-center gap-[5px] w-11 h-11 -mr-2 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400/70 rounded-sm"
       >
         <span
-          className={`block h-[2px] w-6 bg-ink transition-transform duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`}
+          className={`block h-[2px] w-6 bg-lime-100 transition-transform duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`}
         />
         <span
-          className={`block h-[2px] w-6 bg-ink transition-opacity duration-200 ${open ? "opacity-0" : ""}`}
+          className={`block h-[2px] w-6 bg-lime-100 transition-opacity duration-200 ${open ? "opacity-0" : ""}`}
         />
         <span
-          className={`block h-[2px] w-6 bg-ink transition-transform duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
+          className={`block h-[2px] w-6 bg-lime-100 transition-transform duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
         />
       </button>
 
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-50 bg-paper flex flex-col px-6 pt-24 pb-10 transition-all duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 z-50 bg-neutral-950 flex flex-col px-6 pt-24 pb-10 transition-all duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         aria-hidden={!open}
       >
         <nav className="flex flex-col gap-2">
@@ -55,9 +55,9 @@ const MobileNav = () => {
               href={`#${link.toLowerCase()}`}
               onClick={handleClose}
               tabIndex={open ? 0 : -1}
-              className="group flex items-baseline gap-4 py-2 font-display font-extrabold uppercase tracking-tight leading-none text-[clamp(2.5rem,12vw,4rem)] touch-manipulation hover:text-electric-ink transition-colors duration-200"
+              className="group flex items-baseline gap-4 py-2 font-display font-extrabold uppercase tracking-tight leading-none text-[clamp(2.5rem,12vw,4rem)] touch-manipulation hover:text-lime-400 transition-colors duration-200"
             >
-              <span className="font-mono text-electric-ink text-base font-normal">
+              <span className="font-mono text-lime-400 text-base font-normal">
                 0{i + 1}
               </span>
               {link}
@@ -70,7 +70,7 @@ const MobileNav = () => {
             href={`mailto:${CONTACT_EMAIL}`}
             onClick={handleClose}
             tabIndex={open ? 0 : -1}
-            className="font-display font-bold text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation hover:text-electric-ink transition-colors duration-200"
+            className="font-display font-bold text-xl tracking-tight inline-flex items-center min-h-[44px] touch-manipulation hover:text-lime-400 transition-colors duration-200"
           >
             {CONTACT_EMAIL}
           </a>
@@ -82,7 +82,7 @@ const MobileNav = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 tabIndex={open ? 0 : -1}
-                className="font-mono uppercase tracking-widest text-ash hover:text-electric-ink text-xs inline-flex items-center min-h-[44px] touch-manipulation transition-colors duration-200"
+                className="font-mono uppercase tracking-widest text-lime-100/70 hover:text-lime-400 text-xs inline-flex items-center min-h-[44px] touch-manipulation transition-colors duration-200"
               >
                 {s.label}
               </a>
